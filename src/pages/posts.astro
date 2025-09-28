@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { getCollection } from "astro:content";
-const posts = await getCollection("posts");
+import { getCollection, type CollectionEntry } from "astro:content";
+const posts: CollectionEntry<"posts">[] = await getCollection("posts");
 
 const title = "Posts";
 const description = "Written articles about a variety of topics.";
