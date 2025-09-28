@@ -15,10 +15,18 @@ const { post }: { post: CollectionEntry<"posts"> } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={post.data.title} descripton={post.data.description}>
+<BaseLayout title={post.data.title} description={post.data.description}>
     <h1>{post.data.title}</h1>
     <p>{post.data.description}</p>
-    <p>{post.data.pubDate}</p>
+    <p>
+        posted {
+            post.data.pubDate.toLocaleDateString("en-gb", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+            })
+        }
+    </p>
     <hr />
     <Content />
 </BaseLayout>
