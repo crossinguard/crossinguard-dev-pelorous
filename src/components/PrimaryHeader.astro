@@ -21,10 +21,10 @@ import SkipLink from "./SkipLink.astro";
             <nav class="navigation" aria-label="primary">
                 <ul role="list">
                     <li>
-                        <a href="/projects">Projects</a>
+                        <a href="/posts">Posts</a>
                     </li>
                     <li>
-                        <a href="/posts">Posts</a>
+                        <a href="/projects">Projects</a>
                     </li>
                     <li>
                         <a href="/about">About</a>
@@ -99,9 +99,14 @@ import SkipLink from "./SkipLink.astro";
         color: currentColor;
     }
 
+    .site-head__brand p,
+    .navigation a {
+        border-block-end: solid 2px transparent;
+    }
+
     .site-head__brand p:hover,
     .navigation a:hover {
-        color: var(--color-dark);
+        color: var(--color-tertiary);
         border-block-end: solid 2px;
     }
 

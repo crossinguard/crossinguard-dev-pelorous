@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import { getCollection } from "astro:content";
+const posts = await getCollection("posts");
+
 const title = "Posts";
 const description = "Written articles about a variety of topics.";
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
     <h1>{title}</h1>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quis
@@ -13,4 +16,14 @@ const description = "Written articles about a variety of topics.";
         autem earum alias doloribus, consequuntur dolor! Ratione quaerat ea
         ipsam minus ad!
     </p>
+    <h2>My Posts</h2>
+    <ul>
+        {
+            posts.map((post) => (
+                <li>
+                    <a href={`/posts/${post.id}`}>{post.data.title}</a>
+                </li>
+            ))
+        }
+    </ul>
 </BaseLayout>
