@@ -1,35 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
 
 const title = "Home";
-const description = "The personal website of Brett Egbert.";
 ---
 
 <BaseLayout title={title}>
-	<h1>{title}</h1>
-	<Image
-		src="/crystal-circle-logo.webp"
-		alt="crystal logo"
-		width="216"
-		height="216"
-	/>
-	<p>
-		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae
-		reiciendis odit incidunt fugit tempore quod consequatur eveniet nam
-		molestiae, ea, sit nostrum at cupiditate soluta libero suscipit,
-		inventore natus voluptatibus?
-	</p>
-	<h2>Lorem ipsum dolor sit amet.</h2>
-	<p>
-		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error ipsam
-		earum voluptas sint officia rem similique placeat, odio nam commodi?
-		Quidem tempore dolore suscipit ipsa nulla ea, excepturi et pariatur.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-		repellendus, quasi veritatis ipsum fuga earum id error consectetur in.
-		Sed ducimus cum eius consequatur laborum quia praesentium dolores
-		debitis nam!
-	</p>
+    <h1>Welcome {title}</h1>
+    <p>
+        I am an educator obsessed with the belief that things worth knowing
+        should not be miserable to learn. Each day I explore the overlapping
+        Venn diagram of <strong>math ed</strong>, <strong>assessment</strong>,
+        and <strong>web development</strong>.
+    </p>
+    <h2>UNDER CONSTRUCTION</h2>
+    <p>
+        If you somehow found this, just know things are a bit rough around here.
+        The base functionality and styles are up and running, but there is still
+        a lot of work to do. Eventually, progress will be tracked in my <a
+            href="/posts">Posts</a
+        >.
+    </p>
+    <h3>TOODS</h3>
+    <ul>
+        <li>fix my horrendous h2 styling</li>
+        <li>make my h3 styling cooler</li>
+        <li>add active page indicator to navigation</li>
+        <li>add breadcrumb navigation to content collections</li>
+        <li>create content collection "cards"</li>
+        <li>fix the offset focus outline on primary nav selection</li>
+        <li>add a picture of me?</li>
+    </ul>
 </BaseLayout>

@@ -18,6 +18,10 @@ const today = new Date();
     </ul>
     <p>stay curious</p>
 </footer>
+<div class="border1"></div>
+<div class="border2"></div>
+<div class="border3"></div>
+<div class="border4"></div>
 
 <style>
     footer {
@@ -36,10 +40,6 @@ const today = new Date();
         justify-content: center;
         gap: 1rem;
         padding-inline: 0;
-        /*display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0 1rem;*/
     }
 
     .social li {
@@ -62,5 +62,21 @@ const today = new Date();
 
     .social a::after {
         content: " ]";
+    }
+
+    .border1 {
+        border-bottom: 5px solid var(--color-tertiary);
+    }
+
+    .border2 {
+        border-bottom: 5px solid var(--color-secondary);
+    }
+
+    .border3 {
+        border-bottom: 5px solid var(--color-primary);
+    }
+
+    .border4 {
+        border-bottom: 5px solid var(--color-primary-shade);
     }
 </style>
