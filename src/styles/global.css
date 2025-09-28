@@ -1,9 +1,9 @@
 /* GLOBAL LAYER - Reset, variables, base styles */
-@import 'global/reset.css';
-@import 'global/fonts.css';
-@import 'global/colors.css';
-@import 'global/variables.css';
-@import 'global/base.css';
+@import "global/reset.css";
+@import "global/fonts.css";
+@import "global/colors.css";
+@import "global/variables.css";
+@import "global/base.css";
 /*@import 'global/global-styles.css';*/
 
 /* COMPOSITION LAYER - Layout primitives */
@@ -17,5 +17,3 @@
 
 /* EXCEPTIONS LAYER - Context-specific overrides */
 /*@import 'exceptions/index.css';*/
-
-

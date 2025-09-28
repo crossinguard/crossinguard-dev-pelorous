@@ -2,14 +2,13 @@ body {
     color: var(--color-dark);
     background: var(--color-light);
     line-height: 1.5;
-    font-family: 'Hind', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 400;
+    font-family: "League Spartan Variable", Arial, Helvetica, sans-serif;
+    font-variation-settings: "wght" 345;
 }
 
 h1,
 h2 {
-    font-family: 'Halant', Georgia, 'Times New Roman', Times, serif;
-    font-weight: 600;
+    font-variation-settings: "wght" 550;
     line-height: 1.1;
     max-width: 30ch;
 }
@@ -63,14 +62,13 @@ main:focus {
 }
 
 .wrapper {
-  max-width: 65rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
 .flow > * + * {
-  margin-top: var(--flow-space, 1em);
+    margin-top: var(--flow-space, 1em);
 }
-
