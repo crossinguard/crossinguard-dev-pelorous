@@ -34,15 +34,24 @@ import SkipLink from "./SkipLink.astro";
         </div>
     </div>
 </header>
+<div class="border1"></div>
+<div class="border2"></div>
 
 <style>
     .site-head {
         padding: 0.6rem 0;
-        background: var(--color-primary);
+        background: var(--color-primary-shade);
         border-bottom: 5px solid var(--color-primary);
-        border-bottom: 5px solid var(--color-primary-shade);
         color: var(--color-light);
         line-height: 1.1;
+    }
+
+    .border1 {
+        border-bottom: 5px solid var(--color-secondary);
+    }
+
+    .border2 {
+        border-bottom: 5px solid var(--color-tertiary);
     }
 
     .site-head :focus {
