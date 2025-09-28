@@ -4,17 +4,63 @@ const today = new Date();
 
 <footer class="wrapper">
     <p>W. Brett Egbert &copy; {today.getFullYear()}</p>
+    <ul class="social">
+        <li><a href="mailto:brett@crossinguard.dev">email</a></li>
+        <li>
+            <a href="https://github.com/crossinguard" target="_blank">github</a>
+        </li>
+        <li>
+            <a
+                href="https://www.linkedin.com/in/w-brett-egbert/"
+                target="_blank">linkedin</a
+            >
+        </li>
+    </ul>
     <p>stay curious</p>
 </footer>
 
 <style>
     footer {
         padding-block: 4rem;
+        font-family: monospace;
     }
 
     p {
         margin-inline: auto;
         text-align: center;
-        font-family: monospace;
+    }
+
+    .social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding-inline: 0;
+        /*display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0 1rem;*/
+    }
+
+    .social li {
+        list-style: none;
+        border-block-end: solid 2px transparent;
+    }
+
+    .social a {
+        text-decoration: none;
+    }
+
+    .social a:hover {
+        color: var(--color-primary-shade);
+        border-block-end: solid 2px;
+    }
+
+    .social a::before {
+        content: "[ ";
+    }
+
+    .social a::after {
+        content: " ]";
     }
 </style>
