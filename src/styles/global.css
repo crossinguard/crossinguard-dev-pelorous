@@ -1,0 +1,21 @@
+/* GLOBAL LAYER - Reset, variables, base styles */
+@import 'global/reset.css';
+@import 'global/fonts.css';
+@import 'global/colors.css';
+@import 'global/variables.css';
+@import 'global/base.css';
+/*@import 'global/global-styles.css';*/
+
+/* COMPOSITION LAYER - Layout primitives */
+/*@import 'composition/index.css';*/
+
+/* UTILITIES LAYER - Single-purpose classes */
+/*@import 'utilities/index.css';*/
+
+/* BLOCKS LAYER - Component styles */
+/*@import 'blocks/index.css';*/
+
+/* EXCEPTIONS LAYER - Context-specific overrides */
+/*@import 'exceptions/index.css';*/
+
+

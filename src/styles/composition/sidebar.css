@@ -1,0 +1,35 @@
+/*
+SIDEBAR
+More info: https://every-layout.dev/layouts/sidebar/
+A layout that allows you to have a flexible main content area
+and a "fixed" width sidebar that sits on the left or right.
+*/
+
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--s1));
+}
+
+.with-sidebar > :first-child {
+  flex-basis: var(--sidebar-width, 20rem);
+  flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--content-min, 50%);
+}
+
+/* Reverse */
+.with-sidebar[data-side="right"] > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--content-min, 50%);
+}
+
+.with-sidebar[data-side="right"] > :last-child {
+  flex-basis: var(--sidebar-width, 20rem);
+  flex-grow: 1;
+}

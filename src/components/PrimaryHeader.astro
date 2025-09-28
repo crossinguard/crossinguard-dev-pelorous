@@ -1,0 +1,104 @@
+---
+import SkipLink from "./SkipLink.astro";
+---
+
+<header class="site-head" role="banner">
+    <SkipLink />
+    <div class="wrapper">
+        <div class="site-head__inner">
+            <a
+                href="/"
+                aria-label="crossinguard.dev home"
+                class="site-head__brand"
+            >
+                <img
+                    src="/crystal-circle-logo.svg"
+                    alt="crossinguard.dev logo"
+                    class="site-head__brand-logo"
+                />
+                <p>crossinguard.dev</p>
+            </a>
+            <nav class="navigation" aria-label="primary">
+                <ul role="list">
+                    <li>
+                        <a href="#">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Posts</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<style>
+    .site-head {
+        padding: 0.6rem 0;
+        background: var(--color-primary);
+        border-bottom: 5px solid var(--color-primary);
+        border-bottom: 5px solid var(--color-primary-shade);
+        color: var(--color-light);
+        line-height: 1.1;
+    }
+
+    .site-head :focus {
+        outline-color: var(--color-light);
+    }
+
+    .site-head__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0 1rem;
+    }
+
+    .site-head__brand {
+        font-family: Lazer84;
+        font-size: 1.5rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 0.5rem;
+    }
+
+    .site-head__brand-logo {
+        width: 3rem;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.3rem 0.8rem;
+        padding: 0;
+    }
+
+    .navigation li {
+        margin: 0.1rem;
+    }
+
+    .navigation a {
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: currentColor;
+    }
+
+    .site-head__brand p:hover,
+    .navigation a:hover {
+        color: var(--color-dark);
+        border-block-end: solid 2px;
+    }
+
+    @media (max-width: 600px) {
+        .site-head__inner {
+            flex-direction: column;
+        }
+    }
+</style>

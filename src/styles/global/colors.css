@@ -1,0 +1,73 @@
+:root {
+    --color-white-linen-50: #f9f3eb;
+    --color-white-linen-100: #f5ecdf;
+    --color-white-linen-200: #ebd7bd;
+    --color-white-linen-300: #ddba94;
+    --color-white-linen-400: #cf9868;
+    --color-white-linen-500: #c57e4a;
+    --color-white-linen-600: #b76a3f;
+    --color-white-linen-700: #985536;
+    --color-white-linen-800: #7b4531;
+    --color-white-linen-900: #643a2a;
+    --color-white-linen-950: #351d15;
+
+    --color-beryl-green-50: #f4faeb;
+    --color-beryl-green-100: #e1f0c9;
+    --color-beryl-green-200: #d1e8ae;
+    --color-beryl-green-300: #b2d87e;
+    --color-beryl-green-400: #94c655;
+    --color-beryl-green-500: #76ab37;
+    --color-beryl-green-600: #5a8828;
+    --color-beryl-green-700: #466823;
+    --color-beryl-green-800: #3a5321;
+    --color-beryl-green-900: #334720;
+    --color-beryl-green-950: #18270c;
+
+    --color-pastel-green-50: #f0fdf2;
+    --color-pastel-green-100: #ddfbe3;
+    --color-pastel-green-200: #bdf5c9;
+    --color-pastel-green-300: #89ec9f;
+    --color-pastel-green-400: #67df82;
+    --color-pastel-green-500: #27c04a;
+    --color-pastel-green-600: #1a9f38;
+    --color-pastel-green-700: #187d30;
+    --color-pastel-green-800: #18632b;
+    --color-pastel-green-900: #165125;
+    --color-pastel-green-950: #062d11;
+
+    --color-pelorous-50: #ecfffd;
+    --color-pelorous-100: #d0fdfb;
+    --color-pelorous-200: #a7faf7;
+    --color-pelorous-300: #6af6f3;
+    --color-pelorous-400: #26eaea;
+    --color-pelorous-500: #0acdd0;
+    --color-pelorous-600: #0ba4ae;
+    --color-pelorous-700: #10848e;
+    --color-pelorous-800: #176973;
+    --color-pelorous-900: #175762;
+    --color-pelorous-950: #093b43;
+
+    --color-blue-zodiac-50: #e9faff;
+    --color-blue-zodiac-100: #cff2ff;
+    --color-blue-zodiac-200: #a9ebff;
+    --color-blue-zodiac-300: #6ee2ff;
+    --color-blue-zodiac-400: #2accff;
+    --color-blue-zodiac-500: #00a8ff;
+    --color-blue-zodiac-600: #007fff;
+    --color-blue-zodiac-700: #0065ff;
+    --color-blue-zodiac-800: #0055e2;
+    --color-blue-zodiac-900: #004db0;
+    --color-blue-zodiac-950: #011f45;
+
+    --color-ebony-50: #e4edff;
+    --color-ebony-100: #cfdcff;
+    --color-ebony-200: #a8beff;
+    --color-ebony-300: #7492ff;
+    --color-ebony-400: #3e52ff;
+    --color-ebony-500: #1316ff;
+    --color-ebony-600: #0400ff;
+    --color-ebony-700: #0400ff;
+    --color-ebony-800: #0300e4;
+    --color-ebony-900: #0900b0;
+    --color-ebony-950: #02001a;
+}

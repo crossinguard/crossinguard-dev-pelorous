@@ -1,0 +1,40 @@
+/*
+SPACING UTILITIES
+Single-purpose spacing utilities using the modular scale
+*/
+
+/* Padding */
+.pad-0 { padding: 0; }
+.pad-3xs { padding: var(--s-5); }
+.pad-2xs { padding: var(--s-4); }
+.pad-xs { padding: var(--s-3); }
+.pad-s { padding: var(--s-2); }
+.pad-m { padding: var(--s-1); }
+.pad-l { padding: var(--s0); }
+.pad-xl { padding: var(--s1); }
+.pad-2xl { padding: var(--s2); }
+.pad-3xl { padding: var(--s3); }
+
+/* Margin */
+.push-0 { margin: 0; }
+.push-3xs { margin: var(--s-5); }
+.push-2xs { margin: var(--s-4); }
+.push-xs { margin: var(--s-3); }
+.push-s { margin: var(--s-2); }
+.push-m { margin: var(--s-1); }
+.push-l { margin: var(--s0); }
+.push-xl { margin: var(--s1); }
+.push-2xl { margin: var(--s2); }
+.push-3xl { margin: var(--s3); }
+.push-auto { margin: auto; }
+
+/* Gap */
+.gap-3xs { gap: var(--s-5); }
+.gap-2xs { gap: var(--s-4); }
+.gap-xs { gap: var(--s-3); }
+.gap-s { gap: var(--s-2); }
+.gap-m { gap: var(--s-1); }
+.gap-l { gap: var(--s0); }
+.gap-xl { gap: var(--s1); }
+.gap-2xl { gap: var(--s2); }
+.gap-3xl { gap: var(--s3); }

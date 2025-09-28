@@ -1,0 +1,49 @@
+/*
+HELPER UTILITIES
+General-purpose helper utilities
+*/
+
+/* Display */
+.hidden { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+
+/* Visibility */
+.invisible { visibility: hidden; }
+.visible { visibility: visible; }
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible */
+.focus-visible:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Overflow */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-x-auto { overflow-x: auto; }
+.overflow-y-auto { overflow-y: auto; }
+
+/* Border radius */
+.radius-0 { border-radius: 0; }
+.radius-s { border-radius: var(--radius-s); }
+.radius-m { border-radius: var(--radius-m); }
+.radius-l { border-radius: var(--radius-l); }
+.radius-full { border-radius: var(--radius-full); }

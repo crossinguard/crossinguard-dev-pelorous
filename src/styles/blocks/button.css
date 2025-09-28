@@ -1,0 +1,59 @@
+/*
+BUTTON COMPONENT
+A flexible button component with variants
+*/
+
+.button {
+  --button-padding-x: var(--s0);
+  --button-padding-y: var(--s-2);
+  --button-bg: var(--color-primary);
+  --button-text: white;
+  --button-border-width: 2px;
+  --button-radius: var(--radius-s);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: var(--button-border-width) solid var(--button-bg);
+  border-radius: var(--button-radius);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Variants */
+.button--secondary {
+  --button-bg: var(--color-secondary);
+}
+
+.button--outline {
+  --button-bg: transparent;
+  --button-text: var(--color-primary);
+}
+
+.button--large {
+  --button-padding-x: var(--s1);
+  --button-padding-y: var(--s-1);
+  font-size: var(--step-1);
+}
+
+.button--small {
+  --button-padding-x: var(--s-2);
+  --button-padding-y: var(--s-4);
+  font-size: var(--step--1);
+}
