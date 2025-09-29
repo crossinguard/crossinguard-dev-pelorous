@@ -19,13 +19,15 @@ const { Content } = await render(post);
     <h1>{post.data.title}</h1>
     <p>{post.data.description}</p>
     <p>
-        posted {
-            post.data.pubDate.toLocaleDateString("en-gb", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-            })
-        }
+        <em
+            >posted {
+                post.data.pubDate.toLocaleDateString("en-gb", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                })
+            }</em
+        >
     </p>
     <hr />
     <Content />

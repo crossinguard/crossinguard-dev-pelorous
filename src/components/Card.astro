@@ -1,0 +1,114 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    href: string;
+    image?: {
+        src: string;
+        alt: string;
+    };
+    pubDate?: Date;
+    featured?: boolean;
+}
+
+const {
+    title,
+    description,
+    href,
+    image,
+    pubDate,
+    featured = false,
+} = Astro.props;
+---
+
+<li class={featured ? "featured" : ""}>
+    <a href={href}>
+        {image && <img src={image.src} alt={image.alt} />}
+        <h2 class="title">{title}</h2>
+        <p class="description">{description}</p>
+        {
+            pubDate && (
+                <p class="date">
+                    {pubDate.toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                    })}
+                </p>
+            )
+        }
+    </a>
+</li>
+
+<style>
+    li {
+        width: calc(50% - 1rem);
+        padding: 1rem;
+        border: solid var(--color-light-shade);
+        border-radius: 0.5rem;
+    }
+
+    li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+    }
+
+    li.featured {
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    li.featured img {
+        width: 100%;
+    }
+
+    li.featured .title {
+        font-size: 2.369rem;
+    }
+
+    li img {
+        margin-bottom: 0.5rem;
+        border-radius: 12px;
+        width: 100%;
+        aspect-ratio: 2/1;
+        object-fit: cover;
+    }
+
+    li a {
+        display: block;
+    }
+
+    .title {
+        margin: 0;
+        color: var(--color-dark, #333);
+        line-height: 1;
+    }
+
+    .date {
+        margin: 0;
+        color: var(--color-mid, #666);
+    }
+
+    li a:hover h2,
+    li a:hover .date {
+        color: var(--color-primary, #0066cc);
+    }
+
+    li a:hover img {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 720px) {
+        li {
+            width: 100%;
+            text-align: center;
+        }
+        li.featured {
+            margin-bottom: 0;
+        }
+        li.featured .title {
+            font-size: 1.563em;
+        }
+    }
+</style>

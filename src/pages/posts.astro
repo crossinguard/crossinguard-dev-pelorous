@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
 
 import {
     getCollection,
@@ -23,22 +24,41 @@ const posts: CollectionEntry<"posts">[] = await getCollection("posts");
     <h1>{page.data.title}</h1>
     <p>{page.data.description}</p>
     <Content />
-    <ul>
-        {
-            posts.map((post) => (
-                <li>
-                    <a href={`/posts/${post.id}`}>{post.data.title}</a>
-                    <p>{post.data.description}</p>
-                    <p>
-                        posted{" "}
-                        {post.data.pubDate.toLocaleDateString("en-gb", {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                        })}
-                    </p>
-                </li>
-            ))
-        }
-    </ul>
+    <section>
+        <ul>
+            {
+                posts.map((post, index) => (
+                    <Card
+                        title={post.data.title}
+                        description={post.data.description}
+                        href={`/posts/${post.id}`}
+                        image={post.data.image}
+                        pubDate={post.data.pubDate}
+                        featured={index === 0}
+                    />
+                ))
+            }
+        </ul>
+    </section>
 </BaseLayout>
+
+<style>
+    section {
+        margin-top: 2rem;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @media (max-width: 720px) {
+        ul {
+            gap: 0.5em;
+        }
+    }
+</style>
