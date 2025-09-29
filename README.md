@@ -11,3 +11,13 @@ All commands are run from the root of the project, from a terminal:
 | `yarn dev` | Start development server at `localhost:4321` |
 | `yarn build` | Build production site to `./dist/` |
 | `yarn preview` | Preview build locally |
+
+## Tools & Resources
+
+- web framework: [Astro](https://astro.build/)
+- online repository: [GitHub](https://github.com/)
+- web hosting platform: [Netlify](https://www.netlify.com/)
+- favicon generator: [favicon.io](https://favicon.io/favicon-converter/)
+- CSS reset: [Piccalilli](https://piccalil.li/blog/a-more-modern-css-reset/)
+- color palette generator: [RampenSau](https://meodai.github.io/rampensau/)
+- CSS palette shades: [Tailwind CSS Color Generator](https://uicolors.app/generate)

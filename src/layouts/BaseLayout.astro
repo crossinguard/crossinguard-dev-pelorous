@@ -5,13 +5,10 @@ import Footer from "../components/Footer.astro";
 
 export interface Props {
     title: string;
-    description?: string;
+    description: string;
 }
 
-const {
-    title,
-    description = "The personal website for Brett Egbert and his nerdy little projects.",
-} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">

@@ -1,33 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "About";
-const description = "Background information about Brett Egbert.";
+import { getEntry, render } from "astro:content";
+const page = await getEntry("pages", "about");
+
+if (!page) {
+    // Handle Error, for example:
+    throw new Error("Could not find about page");
+}
+const { Content } = await render(page);
 ---
 
-<BaseLayout title={title} description={description}>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    <h2>"Professional" Personas</h2>
-    <h3>Mathematics Educator</h3>
-    <p>
-        I taught high school math in Utah for 8 years, spending the back half as
-        the department head at one of the largest high schools in the state. I
-        hold both an active educator certificate through the State of Washington
-        (mathematics endorsement) and a master's degree in mathematics
-        education. While I am no longer in the classroom, I still work in
-        education by designing courses and assessments for a nonprofit
-        university.
-    </p>
-    <p>
-        If you are curious for the longer version, check out my post "<a
-            href="/posts/math-ed">Mathematics Educator</a
-        >"
-    </p>
-    <hr />
-    <h3>Assessment Specialist</h3>
-    <p><em>coming soon...probably</em></p>
-    <hr />
-    <h3>Web Developer</h3>
-    <p><em>also coming soonish</em></p>
+<BaseLayout title={page.data.title} description={page.data.description}>
+    <h1>{page.data.title}</h1>
+    <p>{page.data.description}</p>
+    <Content />
 </BaseLayout>

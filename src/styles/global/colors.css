@@ -70,4 +70,16 @@
     --color-ebony-800: #0300e4;
     --color-ebony-900: #0900b0;
     --color-ebony-950: #02001a;
+
+    --color-burning-orange-50: #fff4ed;
+    --color-burning-orange-100: #ffe6d4;
+    --color-burning-orange-200: #ffc8a8;
+    --color-burning-orange-300: #ffa271;
+    --color-burning-orange-400: #ff7139;
+    --color-burning-orange-500: #fe4a11;
+    --color-burning-orange-600: #ef3007;
+    --color-burning-orange-700: #c61f08;
+    --color-burning-orange-800: #9d1b0f;
+    --color-burning-orange-900: #7e1a10;
+    --color-burning-orange-950: #440906;
 }

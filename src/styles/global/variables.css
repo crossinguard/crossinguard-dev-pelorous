@@ -1,12 +1,11 @@
 :root {
-  /* THEME */
-  --color-light: var(--color-white-linen-50); /* #f9f3eb */
-  --color-light-shade: var(--color-white-linen-100); /* #f5ecdf */
-  --color-dark: var(--color-ebony-950); /* #02001a */
-  --color-primary: var(--color-pelorous-600); /* #0ba4ae */
-  --color-primary-shade: var(--color-pelorous-700); /* #10848e */
-  --color-secondary: var(--color-pastel-green-400); /* #67df82 */
-  --color-tertiary: var(--color-beryl-green-100); /* #e1f0c9 */
+    /* THEME */
+    --color-light: var(--color-white-linen-50);
+    --color-light-shade: var(--color-white-linen-100);
+    --color-dark: var(--color-ebony-950);
+    --color-primary: var(--color-pelorous-600);
+    --color-primary-shade: var(--color-pelorous-700);
+    --color-secondary: var(--color-pastel-green-400);
+    --color-tertiary: var(--color-beryl-green-100);
+    --color-pop: var(--color-burning-orange-400);
 }
-
-

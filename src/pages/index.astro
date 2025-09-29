@@ -1,33 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Home";
+import { getEntry, render } from "astro:content";
+const page = await getEntry("pages", "home");
+
+if (!page) {
+    // Handle Error, for example:
+    throw new Error("Could not find home page");
+}
+const { Content } = await render(page);
 ---
 
-<BaseLayout title={title}>
-    <h1>Welcome {title}</h1>
-    <p>
-        I am an educator obsessed with the belief that things worth knowing
-        should not be miserable to learn. Each day I explore the overlapping
-        Venn diagram of <strong>math ed</strong>, <strong>assessment</strong>,
-        and <strong>web development</strong>.
-    </p>
-    <h2>UNDER CONSTRUCTION</h2>
-    <p>
-        If you somehow found this, just know things are a bit rough around here.
-        The base functionality and styles are up and running, but there is still
-        a lot of work to do. Eventually, progress will be tracked in my <a
-            href="/posts">Posts</a
-        >.
-    </p>
-    <h3>TOODS</h3>
-    <ul>
-        <li>fix my horrendous h2 styling</li>
-        <li>make my h3 styling cooler</li>
-        <li>add active page indicator to navigation</li>
-        <li>add breadcrumb navigation to content collections</li>
-        <li>create content collection "cards"</li>
-        <li>fix the offset focus outline on primary nav selection</li>
-        <li>add a picture of me?</li>
-    </ul>
+<BaseLayout title={page.data.title}>
+    <h1>Welcome {page.data.title}</h1>
+    <Content />
 </BaseLayout>
