@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
 
 import {
     getCollection,
@@ -23,22 +24,41 @@ const projects: CollectionEntry<"projects">[] = await getCollection("projects");
     <h1>{page.data.title}</h1>
     <p>{page.data.description}</p>
     <Content />
-    <ul>
-        {
-            projects.map((project) => (
-                <li>
-                    <a href={`/projects/${project.id}`}>{project.data.title}</a>
-                    <p>{project.data.description}</p>
-                    <p>
-                        posted{" "}
-                        {project.data.pubDate.toLocaleDateString("en-gb", {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                        })}
-                    </p>
-                </li>
-            ))
-        }
-    </ul>
+    <section>
+        <div class="cards-container">
+            {
+                projects.map((project, index) => (
+                    <Card
+                        title={project.data.title}
+                        description={project.data.description}
+                        href={`/projects/${project.id}`}
+                        image={project.data.image}
+                        pubDate={project.data.pubDate}
+                        tags={project.data.tags}
+                        featured={index === 0}
+                    />
+                ))
+            }
+        </div>
+    </section>
 </BaseLayout>
+
+<style>
+    section {
+        margin-top: 2rem;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        align-items: start;
+    }
+
+    @media (max-width: 768px) {
+        .cards-container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+</style>

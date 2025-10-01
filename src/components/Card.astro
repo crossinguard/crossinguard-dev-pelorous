@@ -1,5 +1,7 @@
 ---
-export interface Props {
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
     title: string;
     description: string;
     href: string;
@@ -8,6 +10,7 @@ export interface Props {
         alt: string;
     };
     pubDate?: Date;
+    tags?: string[];
     featured?: boolean;
 }
 
@@ -17,98 +20,155 @@ const {
     href,
     image,
     pubDate,
+    tags,
     featured = false,
+    class: className,
+    ...attrs
 } = Astro.props;
 ---
 
-<li class={featured ? "featured" : ""}>
-    <a href={href}>
-        {image && <img src={image.src} alt={image.alt} />}
-        <h2 class="title">{title}</h2>
-        <p class="description">{description}</p>
+<div
+    class:list={["card", { "card--featured": featured }, className]}
+    {...attrs}
+>
+    {
+        image && (
+            <img
+                src={image.src}
+                alt={image.alt}
+                class="card__image"
+                loading="lazy"
+                decoding="async"
+            />
+        )
+    }
+
+    <div class="card__content">
         {
-            pubDate && (
-                <p class="date">
-                    {pubDate.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                    })}
-                </p>
+            tags && tags.length > 0 && (
+                <span class="card__category">{tags[0]}</span>
             )
         }
-    </a>
-</li>
+
+        {
+            pubDate && (
+                <time class="card__date" datetime={pubDate.toISOString()}>
+                    {pubDate.toLocaleDateString("en-US", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                    })}
+                </time>
+            )
+        }
+
+        <h3 class="card__title">
+            <a href={href} class="card__link">{title}</a>
+        </h3>
+
+        <p class="card__description">{description}</p>
+    </div>
+</div>
 
 <style>
-    li {
-        width: calc(50% - 1rem);
-        padding: 1rem;
-        border: solid var(--color-light-shade);
-        border-radius: 0.5rem;
-    }
-
-    li * {
-        text-decoration: none;
-        transition: 0.2s ease;
-    }
-
-    li.featured {
-        width: 100%;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    li.featured img {
-        width: 100%;
-    }
-
-    li.featured .title {
-        font-size: 2.369rem;
-    }
-
-    li img {
-        margin-bottom: 0.5rem;
+    .card {
+        background: var(--color-light, #fff);
+        border: 1px solid var(--color-dark, #000);
         border-radius: 12px;
+        padding: 24px;
+        box-shadow: 8px 8px 0px var(--color-dark, #000);
+        transition: all 0.2s ease;
+        container-type: inline-size;
+        max-width: 384px;
+        height: fit-content;
+    }
+
+    .card:hover {
+        box-shadow: 16px 16px 0px var(--color-dark, #000);
+        transform: translate(-4px, -4px);
+    }
+
+    .card--featured {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .card__image {
         width: 100%;
-        aspect-ratio: 2/1;
+        height: 200px;
         object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 24px;
     }
 
-    li a {
-        display: block;
+    .card__content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .title {
+    .card__category {
+        background: var(--color-primary, #f4d04e);
+        color: var(--color-dark, #000);
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        font-weight: 800;
+        width: fit-content;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .card__date {
+        font-size: 0.875rem;
+        color: var(--color-dark, #000);
+        font-weight: 500;
+    }
+
+    .card__title {
         margin: 0;
-        color: var(--color-dark, #333);
-        line-height: 1;
+        font-size: clamp(1.25rem, 4cqi, 1.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        color: var(--color-dark, #000);
     }
 
-    .date {
+    .card__link {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s ease;
+    }
+
+    .card__link:hover,
+    .card__link:focus-visible {
+        color: var(--color-primary, #f4d04e);
+        outline: 2px solid var(--color-primary, #f4d04e);
+        outline-offset: 2px;
+    }
+
+    .card__description {
         margin: 0;
-        color: var(--color-mid, #666);
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--color-mid, #7c7c7c);
     }
 
-    li a:hover h2,
-    li a:hover .date {
-        color: var(--color-primary, #0066cc);
+    .card--featured .card__title {
+        font-size: clamp(1.5rem, 6cqi, 2rem);
     }
 
-    li a:hover img {
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    .card--featured .card__description {
+        font-size: 1.125rem;
     }
 
-    @media (max-width: 720px) {
-        li {
-            width: 100%;
-            text-align: center;
+    @container (max-width: 300px) {
+        .card {
+            padding: 20px;
         }
-        li.featured {
-            margin-bottom: 0;
-        }
-        li.featured .title {
-            font-size: 1.563em;
+
+        .card__image {
+            height: 160px;
+            margin-bottom: 20px;
         }
     }
 </style>
