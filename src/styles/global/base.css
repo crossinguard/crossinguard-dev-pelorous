@@ -1,9 +1,21 @@
+html,
 body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     color: var(--color-dark);
     background: var(--color-light);
     line-height: 1.5;
     font-family: "League Spartan Variable", Arial, Helvetica, sans-serif;
     font-variation-settings: "wght" 345;
+}
+
+main {
+    flex: 1;
 }
 
 h1,
