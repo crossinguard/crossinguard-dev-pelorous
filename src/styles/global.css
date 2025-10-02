@@ -7,7 +7,13 @@
 /*@import 'global/global-styles.css';*/
 
 /* COMPOSITION LAYER - Layout primitives */
-/*@import 'composition/index.css';*/
+@import "composition/cluster.css";
+@import "composition/flow.css";
+@import "composition/grid.css";
+@import "composition/repel.css";
+@import "composition/sidebar.css";
+@import "composition/switcher.css";
+@import "composition/wrapper.css";
 
 /* UTILITIES LAYER - Single-purpose classes */
 /*@import 'utilities/index.css';*/
