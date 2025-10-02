@@ -16,6 +16,6 @@
     --font-s: clamp(0.75rem, 0.75rem + 0.5dvw, 1rem);
 
     /* SPACING */
-    --wrapper-max-width: 80rem;
+    --wrapper-max-width: 70ch;
     --gutter: clamp(1rem, 1rem + 0.5dvw, 2rem);
 }

@@ -56,12 +56,6 @@ a {
     outline-offset: 0.2rem;
 }
 
-p,
-li,
-dl {
-    max-width: 70ch;
-}
-
 main {
     width: 100%;
 }
