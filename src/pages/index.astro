@@ -11,7 +11,7 @@ if (!page) {
 const { Content } = await render(page);
 ---
 
-<BaseLayout title={page.data.title}>
+<BaseLayout title={page.data.title} description={page.data.description}>
     <h1>Welcome {page.data.title}</h1>
     <Content />
 </BaseLayout>

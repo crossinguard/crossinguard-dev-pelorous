@@ -52,10 +52,8 @@ const { title, description } = Astro.props;
     </head>
     <body>
         <PrimaryHeader />
-        <main id="main-content" tabindex="-1" class="wrapper">
-            <article class="flow">
-                <slot />
-            </article>
+        <main id="main-content" tabindex="-1" class="wrapper flow">
+            <slot />
         </main>
         <Footer />
     </body>

@@ -2,9 +2,9 @@
 const today = new Date();
 ---
 
-<footer class="wrapper">
+<footer>
     <p>W. Brett Egbert &copy; {today.getFullYear()}</p>
-    <ul class="social">
+    <ul class="social cluster">
         <li><a href="mailto:brett@crossinguard.dev">email</a></li>
         <li>
             <a href="https://github.com/crossinguard" target="_blank">github</a>
@@ -18,33 +18,32 @@ const today = new Date();
     </ul>
     <p>stay curious</p>
 </footer>
-<span class="border1"></span>
-<span class="border2"></span>
-<span class="border3"></span>
-<span class="border4"></span>
 
 <style>
     footer {
-        padding-block: 4rem;
+        padding-block: 2rem;
         font-family: monospace;
+        font-size: var(--font-s);
+        box-shadow:
+            0 0.25rem var(--color-tertiary),
+            0 0.5rem var(--color-secondary),
+            0 1rem var(--color-primary),
+            0 8rem var(--color-primary-shade);
+        text-align: center;
+        margin-block-end: 2rem;
     }
 
     p {
         margin-inline: auto;
-        text-align: center;
     }
 
     .social {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        --cluster-horizontal-alignment: center;
         padding-inline: 0;
     }
 
     .social li {
         list-style: none;
-        border-block-end: solid 2px transparent;
     }
 
     .social a {
@@ -52,8 +51,10 @@ const today = new Date();
     }
 
     .social a:hover {
-        color: var(--color-primary-shade);
-        border-block-end: solid 2px;
+        text-decoration: underline;
+        text-decoration-color: var(--color-primary);
+        text-decoration-thickness: 0.25rem;
+        text-underline-offset: 0.25rem;
     }
 
     .social a::before {
@@ -62,21 +63,5 @@ const today = new Date();
 
     .social a::after {
         content: " ]";
-    }
-
-    .border1 {
-        border-bottom: 0.25rem solid var(--color-tertiary);
-    }
-
-    .border2 {
-        border-bottom: 0.5rem solid var(--color-secondary);
-    }
-
-    .border3 {
-        border-bottom: 1rem solid var(--color-primary);
-    }
-
-    .border4 {
-        border-bottom: 2rem solid var(--color-primary-shade);
     }
 </style>

@@ -25,40 +25,18 @@ const posts: CollectionEntry<"posts">[] = await getCollection("posts");
     <p>{page.data.description}</p>
     <Content />
     <section>
-        <div class="cards-container">
-            {
-                posts.map((post, index) => (
-                    <Card
-                        title={post.data.title}
-                        description={post.data.description}
-                        href={`/posts/${post.id}`}
-                        image={post.data.image}
-                        pubDate={post.data.pubDate}
-                        tags={post.data.tags}
-                        featured={index === 0}
-                    />
-                ))
-            }
-        </div>
+        {
+            posts.map((post, index) => (
+                <Card
+                    title={post.data.title}
+                    description={post.data.description}
+                    href={`/posts/${post.id}`}
+                    image={post.data.image}
+                    pubDate={post.data.pubDate}
+                    tags={post.data.tags}
+                    featured={index === 0}
+                />
+            ))
+        }
     </section>
 </BaseLayout>
-
-<style>
-    section {
-        margin-top: 2rem;
-    }
-
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        align-items: start;
-    }
-
-    @media (max-width: 768px) {
-        .cards-container {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-    }
-</style>

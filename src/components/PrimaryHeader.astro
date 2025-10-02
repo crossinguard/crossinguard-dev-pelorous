@@ -2,24 +2,23 @@
 import SkipLink from "./SkipLink.astro";
 ---
 
-<header class="site-head" role="banner">
+<header role="banner">
     <SkipLink />
     <div class="wrapper">
-        <div class="site-head__inner">
+        <div class="site-head repel">
             <a
                 href="/"
                 aria-label="crossinguard.dev home"
-                class="site-head__brand"
+                class="site-head__brand cluster"
             >
                 <img
                     src="/crystal-circle-logo.svg"
                     alt="crossinguard.dev logo"
-                    class="site-head__brand-logo"
                 />
                 <p>crossinguard.dev</p>
             </a>
-            <nav class="navigation" aria-label="primary">
-                <ul role="list">
+            <nav aria-label="primary">
+                <ul role="list" class="cluster">
                     <li>
                         <a href="/posts">Posts</a>
                     </li>
@@ -34,85 +33,62 @@ import SkipLink from "./SkipLink.astro";
         </div>
     </div>
 </header>
-<div class="border1"></div>
-<div class="border2"></div>
 
 <style>
-    .site-head {
-        padding: 0.6rem 0;
+    header {
         background: var(--color-primary-shade);
-        border-bottom: 5px solid var(--color-primary);
         color: var(--color-light);
-        line-height: 1.1;
-    }
-
-    .border1 {
-        border-bottom: 5px solid var(--color-secondary);
-    }
-
-    .border2 {
-        border-bottom: 5px solid var(--color-tertiary);
+        box-shadow:
+            0 0.25rem var(--color-primary),
+            0 0.5rem var(--color-secondary),
+            0 0.75rem var(--color-tertiary);
+        margin-block-end: 1.5rem;
     }
 
     .site-head :focus {
         outline-color: var(--color-light);
     }
 
-    .site-head__inner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0 1rem;
-    }
-
     .site-head__brand {
-        font-family: "Lazer84";
-        font-size: 1.5rem;
+        --gutter: 0.5rem;
         text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0 0.5rem;
     }
 
-    .site-head__brand-logo {
-        width: 3rem;
+    .site-head__brand img {
+        width: var(--font-xl);
     }
 
-    .navigation ul {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.3rem 0.8rem;
+    .site-head__brand p {
+        font-family: "Lazer84";
+        text-shadow: 1px 1px 2px var(--color-dark);
+    }
+
+    nav ul {
         padding: 0;
     }
 
-    .navigation li {
-        margin: 0.1rem;
-    }
-
-    .navigation a {
+    nav a {
         font-variation-settings: "wght" 600;
         text-transform: uppercase;
         text-decoration: none;
         color: currentColor;
+        text-shadow: 1px 1px 2px var(--color-dark);
     }
 
-    .site-head__brand p,
-    .navigation a {
-        border-block-end: solid 2px transparent;
-    }
-
-    .site-head__brand p:hover,
-    .navigation a:hover {
+    .site-head__brand:hover,
+    nav a:hover {
         color: var(--color-tertiary);
-        border-block-end: solid 2px;
+        text-decoration: underline;
+        text-decoration-color: var(--color-primary);
+        text-decoration-thickness: 0.25rem;
+        text-underline-offset: 0.25rem;
     }
 
-    @media (max-width: 600px) {
-        .site-head__inner {
+    @media (max-width: 550px) {
+        .site-head {
+            --gutter: 0 clamp(1rem, 1rem + 0.5dvw, 2rem);
             flex-direction: column;
+            padding-block-start: 1rem;
         }
     }
 </style>

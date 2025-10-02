@@ -10,4 +10,12 @@
     --color-pop: var(--color-burning-orange-400);
 
     /* TYPOGRAPHY */
+    --font-xl: clamp(3rem, 3rem + 0.5dvw, 4rem);
+    --font-l: clamp(2rem, 2rem + 0.5dvw, 3rem);
+    --font-m: clamp(1rem, 1rem + 0.5dvw, 2rem);
+    --font-s: clamp(0.75rem, 0.75rem + 0.5dvw, 1rem);
+
+    /* SPACING */
+    --wrapper-max-width: 80rem;
+    --gutter: clamp(1rem, 1rem + 0.5dvw, 2rem);
 }
