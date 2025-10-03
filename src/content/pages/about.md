@@ -5,7 +5,7 @@ description: "Information about where I've been, what I'm doing, and where I'm h
 
 ![Brett Egbert](../../assets/brett-egbert.webp)
 
-My name is **W. Brett Egbert** (the "W" is silent). I have lived in North Carolina, Texas, Indiana, Kentucky, Mississippi, Ohio, Utah, and Washington. I hope to never move again.
+My name is **W. Brett Egbert** *(the "W" is silent)*. I have lived in North Carolina, Texas, Indiana, Kentucky, Mississippi, Ohio, Utah, and Washington, and hope to never move again.
 
 ## Professional Personas
 
@@ -21,11 +21,17 @@ If you are curious for the longer version, check out my post "[Mathematics Educa
 
 ### Assessment Specialist
 
-*coming soon...probably*
+As an educator, I know the value of good lessons supported by quality instructional materials. However, knowing if/when students can actually **do the things** they are learning about is something else entirely.
+
+I am an "assessment specialist", meaning I create opportunities for students to show they can **do the things** they learned about. My approach is centered around assessment-first instructional design and competency-based education.
+
+---
 
 ### Web Developer
 
-*also coming soonish*
+Back in high school during the early 2000s, I took an "Intro to Web Design" course. I later joined the student-run school website team, specializing in the totally-still-relevant field of [Flash](https://en.wikipedia.org/wiki/Adobe_Flash) (Macromedia Flash at the time).
+
+In college I bounced back and forth between majoring in math education or computer science. The mah ed path won, but now as a bona fide adult I am diving head-first into modern web design.
 
 <style>
     main img {
