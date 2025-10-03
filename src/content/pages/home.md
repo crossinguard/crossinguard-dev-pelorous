@@ -15,8 +15,8 @@ If you somehow found this, you might notice things are a bit rough around here. 
 
 - ~~fix my horrendous h2 styling~~
 - ~~make my h3 styling cooler~~ (what even is "cool"?)
+- ~~create content collection "cards"~~
+- ~~add a picture of me?~~
 - add active page indicator to navigation
 - add breadcrumb navigation to content collections
-- create content collection "cards"
 - fix the offset focus outline on primary nav selection
-- add a picture of me?

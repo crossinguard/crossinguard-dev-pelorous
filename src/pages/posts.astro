@@ -17,6 +17,7 @@ const posts = await getCollection("posts");
 <BaseLayout title={page.data.title} description={page.data.description}>
     <h1>{page.data.title}</h1>
     <p>{page.data.description}</p>
+    <hr />
 
     <!-- POST PAGE CONTENT -->
     <Content />
