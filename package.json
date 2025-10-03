@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@phosphor-icons/web": "^2.1.2",
     "astro": "^5.14.1"
   }
 }

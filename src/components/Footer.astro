@@ -1,20 +1,28 @@
 ---
+import site from "../data/site.json";
+import "@phosphor-icons/web/regular";
+
 const today = new Date();
 ---
 
 <footer>
-    <p>W. Brett Egbert &copy; {today.getFullYear()}</p>
+    <p>{site.author.name} &copy; {today.getFullYear()}</p>
     <ul class="social cluster">
-        <li><a href="mailto:brett@crossinguard.dev">email</a></li>
-        <li>
-            <a href="https://github.com/crossinguard" target="_blank">github</a>
-        </li>
-        <li>
-            <a
-                href="https://www.linkedin.com/in/w-brett-egbert/"
-                target="_blank">linkedin</a
-            >
-        </li>
+        {
+            site.author.social.map((social) => (
+                <li>
+                    <a
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class=`ph ph-${social.icon}`></i>
+                        <!-- <ph-icon name={social.icon} size={24} /> -->
+                        <span class="label">{social.name}</span>
+                    </a>
+                </li>
+            ))
+        }
     </ul>
     <p><em>stay curious</em></p>
 </footer>
@@ -49,23 +57,21 @@ const today = new Date();
 
     .social a {
         text-decoration: none;
-        font-variation-settings: "wght" 600;
-        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
     }
 
     .social a:hover {
-        color: var(--color-tertiary);
-        text-decoration: underline;
-        text-decoration-color: var(--color-primary);
-        text-decoration-thickness: 0.25rem;
-        text-underline-offset: 0.25rem;
-    }
+        .label {
+            color: var(--color-tertiary);
+            text-decoration: underline;
+            text-decoration-color: var(--color-primary);
+            text-decoration-thickness: 0.25rem;
+            text-underline-offset: 0.25rem;
+        }
 
-    .social a::before {
-        content: "[ ";
-    }
-
-    .social a::after {
-        content: " ]";
+        .ph {
+            color: var(--color-secondary);
+        }
     }
 </style>

@@ -1,17 +1,31 @@
 {
   "website": {
     "title": "crossinguard.dev",
-    "description": "Challenges completed as part of the Frontend Mentor learning paths.",
-    "url": "https://crossinguard.dev/"
+    "description": "The personal website for Brett Egbert and his nerdy little projects.",
+    "url": "https://crossinguard.dev/",
+    "navigation": [
+      {
+        "name": "Posts",
+        "url": "/posts"
+      },
+      {
+        "name": "Projects",
+        "url": "/projects"
+      },
+      {
+        "name": "About",
+        "url": "/about"
+      }
+    ]
   },
   "author": {
     "name": "W. Brett Egbert",
     "handle": "crossinguard",
     "social": [
       {
-        "name": "Website",
-        "url": "https://crossinguard.dev/",
-        "icon": "globe"
+        "name": "Email",
+        "url": "mailto:brett@crossinguard.dev",
+        "icon": "at"
       },
       {
         "name": "GitHub",
@@ -20,18 +34,9 @@
       },
       {
         "name": "LinkedIn",
-        "url": "https://github.com/crossinguard",
-        "icon": "github-logo"
+        "url": "https://www.linkedin.com/in/w-brett-egbert/",
+        "icon": "linkedin-logo"
       }
     ]
-  },
-  "challenge": {
-    "name": "Blog preview card",
-    "challenge_url": "https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS",
-    "frontendmentor_url": "https://www.frontendmentor.io?ref=challenge"
-  },
-  "solution": {
-    "github_url": "https://github.com",
-    "repository": "fm-blog-preview-card"
   }
 }

@@ -1,5 +1,6 @@
 ---
 import SkipLink from "./SkipLink.astro";
+import site from "../data/site.json";
 ---
 
 <header role="banner">
@@ -19,15 +20,13 @@ import SkipLink from "./SkipLink.astro";
             </a>
             <nav aria-label="primary">
                 <ul role="list" class="cluster">
-                    <li>
-                        <a href="/posts">Posts</a>
-                    </li>
-                    <li>
-                        <a href="/projects">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
+                    {
+                        site.website.navigation.map((item) => (
+                            <li>
+                                <a href={item.url}>{item.name}</a>
+                            </li>
+                        ))
+                    }
                 </ul>
             </nav>
         </div>
