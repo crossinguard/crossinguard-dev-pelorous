@@ -7,7 +7,7 @@ updatedDate: 2024-11-11
 
 ## Short version
 
-I taught high school math in Utah for 8 years, spending the last 3 as the department head at one of the largest high schools in the state. I hold both an active educator certificate through the State of Washington (mathematics endorsement) and a master's degree in mathematics education. While I am no longer in the classroom, I still work in education by designing courses and assessments for a nonprofit university.
+I taught high school math in Utah for 8 years, spending the back half as the department head at one of the largest high schools in the state. I hold both an active educator certificate through the State of Washington (mathematics endorsement) and a master's degree in mathematics education. While I am no longer in the classroom, I still work in education by designing courses and assessments for a nonprofit university.
 
 ## Long Version
 

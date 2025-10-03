@@ -3,20 +3,22 @@ title: "Home"
 description: "The personal website for Brett Egbert and his nerdy little projects."
 ---
 
-I am an educator obsessed with the belief that things worth knowing should not be miserable to learn. Each day I explore the overlapping Venn diagram of **math ed**, **assessment**, and **web development**.
+Hey there! My name is **Brett Egbert** and this is my site.
 
----
+I am an educator obsessed with the belief that things worth knowing should not be miserable to learn. I live in the overlapping Venn diagram of **math ed**, **assessment**, and **web development**.
 
-## This site is UNDER CONSTRUCTION
+## Visitor's Guide
 
-If you somehow found this, you might notice things are a bit rough around here. The base functionality and styles are up and running, but there is still a lot of work to do. Eventually, progress will be tracked in my [Posts](/posts).
+This site is my digital home—a place that I control with no ads, no tracking, no algorithms, and no trend chasing. Like a pair of cargo shorts, I offer a 100% "I am not trendy" guarantee!
 
-### TOODS
+### <i class="ph ph-text-columns"></i> Posts
 
-- ~~fix my horrendous h2 styling~~
-- ~~make my h3 styling cooler~~ (what even is "cool"?)
-- ~~create content collection "cards"~~
-- ~~add a picture of me?~~
-- add active page indicator to navigation
-- add breadcrumb navigation to content collections
-- fix the offset focus outline on primary nav selection
+I'm no author, but writing is fun and I got mad typing skills. Head on over to [Posts](/posts) to read about my life, my work, and my hobbies.
+
+### <i class="ph ph-gear"></i> Projects
+
+You want [Projects](/projects)? I got Projects. Go there to see my creative endeavours.
+
+### <i class="ph ph-info"></i> About
+
+I came in `<strong>` by bringing up a Venn diagram. Meet me in [About](/about) to join me in the intersection.

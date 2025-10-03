@@ -17,7 +17,7 @@ body {
     font-size: var(--font-m);
     line-height: 1.4;
     font-family: "League Spartan Variable", Arial, Helvetica, sans-serif;
-    font-variation-settings: "wght" 345;
+    font-weight: 345;
 }
 
 main {
@@ -26,7 +26,7 @@ main {
 
 h1,
 h2 {
-    font-variation-settings: "wght" 550;
+    font-weight: 550;
     max-width: 30ch;
     text-wrap: balance;
 }
@@ -42,7 +42,7 @@ h2 {
 }
 
 h3 {
-    font-variation-settings: "wght" 450;
+    font-weight: 450;
 }
 
 a {
@@ -66,4 +66,16 @@ main:focus {
 
 pre {
     white-space: pre-wrap;
+}
+
+code {
+    font-size: var(--font-s);
+}
+
+i {
+    vertical-align: -0.1em;
+}
+
+strong {
+    text-shadow: 1px 1px 2px var(--color-tertiary);
 }
