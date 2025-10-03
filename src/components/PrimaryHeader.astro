@@ -9,14 +9,14 @@ import site from "../data/site.json";
         <div class="site-head repel">
             <a
                 href="/"
-                aria-label="crossinguard.dev home"
+                aria-label=`${site.website.title} home`
                 class="site-head__brand cluster"
             >
                 <img
                     src="/crystal-circle-logo.svg"
-                    alt="crossinguard.dev logo"
+                    alt=`${site.website.title} logo`
                 />
-                <p>crossinguard.dev</p>
+                <p>{site.website.title}</p>
             </a>
             <nav aria-label="primary">
                 <ul role="list" class="cluster">

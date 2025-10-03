@@ -25,7 +25,7 @@ You want [Projects](/projects)? I got Projects. Go there to see my creative ende
 
 ### <i class="ph ph-info"></i> About
 
-I came in `<strong>` by bringing up a Venn diagram. Meet me in [About](/about) to join me in the intersection.
+I came in `<strong>` by bringing up a Venn diagram. Hit up [About](/about) to join me in the intersection.
 
 <style>
     h3,
