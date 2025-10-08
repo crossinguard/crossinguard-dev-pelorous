@@ -21,3 +21,4 @@ All commands are run from the root of the project, from a terminal:
 - CSS reset: [Piccalilli](https://piccalil.li/blog/a-more-modern-css-reset/)
 - color palette generator: [RampenSau](https://meodai.github.io/rampensau/)
 - CSS palette shades: [Tailwind CSS Color Generator](https://uicolors.app/generate)
+- fluid design: [Utopia](https://utopia.fyi/)

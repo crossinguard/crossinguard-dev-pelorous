@@ -1,0 +1,27 @@
+/*
+CONTAINER
+Establishes a container query context, enabling responsive styling
+based on the container's size rather than the viewport.
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--container-name: Name for the container query context (default: none).
+
+USAGE NOTE:
+Use @container rules to style children based on this container's size.
+
+Example:
+  <div class="container" style="--container-name: card;">
+    <div class="card-content">...</div>
+  </div>
+
+  @container card (min-width: 400px) {
+    .card-content { display: grid; }
+  }
+
+More info: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_container_queries
+*/
+
+.container {
+    container-name: var(--container-name);
+    container-type: inline-size;
+}

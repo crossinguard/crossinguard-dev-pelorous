@@ -1,0 +1,32 @@
+/*
+ICON
+More info: https://every-layout.dev/layouts/icon/
+A layout for displaying icons alongside text in controls and links.
+Icons are sized relative to text and aligned properly.
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--icon-space: Space between icon and adjacent text.
+Falls back to --gutter, then var(--space-2xs).
+
+USAGE NOTE:
+The .icon class sizes the icon relative to the text (1cap or 0.75em).
+The .with-icon wrapper ensures proper inline-flex alignment.
+Always provide text labels with icons for accessibility, especially
+for less familiar icons.
+*/
+
+.icon {
+    width: 0.75em;
+    width: 1cap;
+    height: 0.75em;
+    height: 1cap;
+}
+
+.with-icon {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.with-icon .icon {
+    margin-inline-end: var(--icon-space, var(--gutter, var(--space-2xs)));
+}

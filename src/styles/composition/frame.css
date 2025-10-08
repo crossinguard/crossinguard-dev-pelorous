@@ -1,0 +1,32 @@
+/*
+FRAME
+More info: https://every-layout.dev/layouts/frame/
+A layout for cropping media (images, videos) to a specific aspect ratio.
+Useful for maintaining consistent aspect ratios across different viewport sizes.
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--frame-numerator (16): The numerator of the aspect ratio.
+
+--frame-denominator (9): The denominator of the aspect ratio.
+
+--frame-alignment-horizontal (center): Horizontal alignment of media.
+Can be any acceptable flexbox justify-content value.
+
+--frame-alignment-vertical (center): Vertical alignment of media.
+Can be any acceptable flexbox align-items value.
+*/
+
+.frame {
+    aspect-ratio: var(--frame-numerator, 16) / var(--frame-denominator, 9);
+    overflow: hidden;
+    display: flex;
+    justify-content: var(--frame-alignment-horizontal, center);
+    align-items: var(--frame-alignment-vertical, center);
+}
+
+.frame > img,
+.frame > video {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,14 @@
+/*
+CENTER
+Horizontally centers content with a maximum width for optimal readability
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--center-measure: Maximum inline size (width) of centered content.
+Falls back to --wrapper-max-width, then 70ch.
+*/
+
+.center {
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-inline-size: var(--center-measure, var(--wrapper-max-width, 70ch));
+}

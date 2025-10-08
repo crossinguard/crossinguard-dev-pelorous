@@ -1,0 +1,27 @@
+/*
+IMPOSTER
+More info: https://every-layout.dev/layouts/imposter/
+A layout for absolutely positioning content over other content,
+centered both horizontally and vertically. Useful for modals,
+overlays, loading states, or calls-to-action over obscured content.
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--imposter-margin: Margin around the imposter when using .contain variant
+(default: 0px).
+
+USAGE NOTE:
+The containing element should have position: relative or position: fixed.
+*/
+
+.imposter {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imposter.contain {
+    overflow: auto;
+    max-inline-size: calc(100% - (var(--imposter-margin, 0px) * 2));
+    max-block-size: calc(100% - (var(--imposter-margin, 0px) * 2));
+}

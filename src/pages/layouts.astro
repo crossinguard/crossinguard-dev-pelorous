@@ -1,0 +1,331 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Reel from "../components/Reel.astro";
+import "@phosphor-icons/web/regular";
+---
+
+<BaseLayout
+    title="Layout Compositions"
+    description="Interactive demonstrations of composition layout utilities"
+>
+    <h1><i class="ph ph-stack"></i> Layout Compositions</h1>
+    <p>
+        A collection of layout primitives based on <a
+            href="https://every-layout.dev"
+            target="_blank"
+            rel="noopener noreferrer">Every Layout</a
+        >. Each demonstrates a single-purpose composition pattern.
+    </p>
+
+    <hr />
+
+    <!-- STACK -->
+    <section>
+        <h2>Stack</h2>
+        <p>
+            Vertical flexbox layout with consistent spacing between items.
+            Resets margins and uses margin-block-start.
+        </p>
+        <div class="demo">
+            <div class="stack" style="--stack-space: var(--space-s);">
+                <div class="demo-box">Item 1</div>
+                <div class="demo-box">Item 2</div>
+                <div class="demo-box">Item 3</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOW -->
+    <section>
+        <h2>Flow</h2>
+        <p>
+            Adds consistent vertical spacing between direct children. Unlike
+            Stack, preserves natural document flow.
+        </p>
+        <div class="demo">
+            <div class="flow" style="--flow-space: var(--space-m);">
+                <p>First paragraph with natural flow.</p>
+                <p>Second paragraph with vertical spacing.</p>
+                <p>Third paragraph maintains rhythm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLUSTER -->
+    <section>
+        <h2>Cluster</h2>
+        <p>
+            Distributes items with consistent spacing, wrapping as needed.
+            Perfect for tags, button groups, or navigation.
+        </p>
+        <div class="demo">
+            <div class="cluster" style="--cluster-space: var(--space-xs);">
+                <span class="demo-tag">Tag 1</span>
+                <span class="demo-tag">Tag 2</span>
+                <span class="demo-tag">Tag 3</span>
+                <span class="demo-tag">Tag 4</span>
+                <span class="demo-tag">Tag 5</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- REPEL -->
+    <section>
+        <h2>Repel</h2>
+        <p>
+            Pushes items to opposite edges with space-between. Wraps on smaller
+            viewports.
+        </p>
+        <div class="demo">
+            <div class="repel">
+                <div class="demo-box">Left</div>
+                <div class="demo-box">Right</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWITCHER -->
+    <section>
+        <h2>Switcher</h2>
+        <p>
+            Lays 2 items side-by-side until space runs out, then stacks.
+            Additional items always full-width.
+        </p>
+        <div class="demo">
+            <div
+                class="switcher"
+                style="--switcher-target-container-width: 30rem;"
+            >
+                <div class="demo-box">Item 1</div>
+                <div class="demo-box">Item 2</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENTER -->
+    <section>
+        <h2>Center</h2>
+        <p>Horizontally centers content with max-width for readability.</p>
+        <div class="demo">
+            <div
+                class="center"
+                style="--center-measure: 40ch; background: var(--color-tertiary); padding: var(--space-s);"
+            >
+                <p>
+                    This content is centered and constrained to 40 characters
+                    for optimal readability.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WRAPPER -->
+    <section>
+        <h2>Wrapper</h2>
+        <p>
+            Centers content with max-width and horizontal padding. Used for
+            main content areas.
+        </p>
+        <div class="demo">
+            <div
+                class="wrapper"
+                style="background: var(--color-tertiary); padding-block: var(--space-s);"
+            >
+                <p>Wrapped content with gutter padding.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOX -->
+    <section>
+        <h2>Box</h2>
+        <p>Container with padding and optional border. Supports invert mode.</p>
+        <div class="demo cluster">
+            <div
+                class="box"
+                style="--box-border-width: 2px; --box-bg: var(--color-tertiary);"
+            >
+                Regular box
+            </div>
+            <div class="box invert" style="--box-border-width: 2px;">
+                Inverted box
+            </div>
+        </div>
+    </section>
+
+    <!-- COVER -->
+    <section>
+        <h2>Cover</h2>
+        <p>
+            Vertically centers principal element (h1) with optional
+            header/footer. For hero sections.
+        </p>
+        <div class="demo">
+            <div
+                class="cover"
+                style="--cover-min-height: 50vh; border: 2px dashed var(--color-primary);"
+            >
+                <p>Header content</p>
+                <h1 style="margin-inline: auto;">Centered Hero</h1>
+                <p>Footer content</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRAME -->
+    <section>
+        <h2>Frame</h2>
+        <p>Crops media to specific aspect ratio with object-fit.</p>
+        <div class="demo">
+            <div
+                class="frame"
+                style="--frame-numerator: 16; --frame-denominator: 9; max-width: 400px; background: var(--color-tertiary);"
+            >
+                <div
+                    style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"
+                >
+                    16:9 Frame
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ICON -->
+    <section>
+        <h2>Icon</h2>
+        <p>
+            Sizes icons relative to text and aligns properly with labels. Uses
+            Phosphor Icons.
+        </p>
+        <div class="demo flow">
+            <a href="#" class="with-icon">
+                <i class="ph ph-house icon"></i>
+                Home
+            </a>
+            <button class="with-icon" style="--icon-space: var(--space-xs);">
+                <i class="ph ph-star icon"></i>
+                Favorite
+            </button>
+        </div>
+    </section>
+
+    <!-- REEL -->
+    <section>
+        <h2>Reel</h2>
+        <p>
+            Horizontal scrolling layout for browsing content. Alternative to
+            carousels.
+        </p>
+        <div class="demo">
+            <Reel space="var(--space-s)" itemWidth="200px">
+                <div class="demo-box" style="width: 200px; height: 150px;">
+                    Item 1
+                </div>
+                <div class="demo-box" style="width: 200px; height: 150px;">
+                    Item 2
+                </div>
+                <div class="demo-box" style="width: 200px; height: 150px;">
+                    Item 3
+                </div>
+                <div class="demo-box" style="width: 200px; height: 150px;">
+                    Item 4
+                </div>
+                <div class="demo-box" style="width: 200px; height: 150px;">
+                    Item 5
+                </div>
+            </Reel>
+        </div>
+    </section>
+
+    <!-- IMPOSTER -->
+    <section>
+        <h2>Imposter</h2>
+        <p>
+            Absolutely positions content centered over other content. For
+            modals, overlays.
+        </p>
+        <div class="demo">
+            <div
+                style="position: relative; height: 200px; background: var(--color-tertiary);"
+            >
+                <div class="imposter contain" style="--imposter-margin: 1rem;">
+                    <div class="demo-box">Centered Overlay</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTAINER -->
+    <section>
+        <h2>Container</h2>
+        <p>
+            Establishes container query context. Resize browser to see
+            responsive behavior.
+        </p>
+        <div class="demo">
+            <div
+                class="container"
+                style="--container-name: demo; resize: horizontal; overflow: auto; border: 2px dashed var(--color-primary); padding: var(--space-s);"
+            >
+                <div class="container-demo-content">
+                    <p>This responds to container width, not viewport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    section {
+        margin-block: var(--space-2xl);
+    }
+
+    h2 {
+        margin-block-end: var(--space-xs);
+    }
+
+    .demo {
+        background: var(--color-light-shade);
+        padding: var(--space-m);
+        border-radius: 0.5rem;
+        margin-block-start: var(--space-s);
+    }
+
+    .demo-box {
+        background: var(--color-primary);
+        color: var(--color-light);
+        padding: var(--space-s);
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3rem;
+    }
+
+    .demo-tag {
+        background: var(--color-secondary);
+        color: var(--color-dark);
+        padding: var(--space-2xs) var(--space-xs);
+        border-radius: 0.25rem;
+        font-size: var(--step--1);
+    }
+
+    hr {
+        border: none;
+        border-top: 2px solid var(--color-primary);
+        margin-block: var(--space-l);
+    }
+
+    /* Container query demo */
+    @container demo (min-width: 400px) {
+        .container-demo-content {
+            background: var(--color-secondary);
+            padding: var(--space-s);
+            border-radius: 0.25rem;
+        }
+        .container-demo-content::after {
+            content: " [Container width > 400px]";
+            font-weight: bold;
+        }
+    }
+</style>
