@@ -21,3 +21,8 @@ Can be any acceptable flexbox alignment value.
 .repel[data-nowrap] {
     flex-wrap: nowrap;
 }
+
+/* centers when stacked on smaller viewports */
+.repel[data-center-stack] > * {
+    margin-inline: auto;
+}

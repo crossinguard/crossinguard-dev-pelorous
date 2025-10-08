@@ -23,7 +23,7 @@ const posts = await getCollection("posts");
     <Content />
 
     <!-- GENERATED LIST OF POSTS -->
-    <section class="cluster">
+    <section class="grid">
         {
             posts.map((post) => (
                 <Card
@@ -38,9 +38,4 @@ const posts = await getCollection("posts");
     </section>
 </BaseLayout>
 
-<style>
-    section {
-        --cluster-vertical-alignment: start;
-        --cluster-horizontal-alignment: center;
-    }
-</style>
+<style></style>

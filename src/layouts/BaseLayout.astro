@@ -3,6 +3,7 @@ import "../styles/global.css";
 import PrimaryHeader from "../components/PrimaryHeader.astro";
 import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
+import "@phosphor-icons/web/regular";
 
 interface Props {
     title: string;
@@ -73,6 +74,12 @@ const { title, description } = Astro.props;
         <link rel="manifest" href="/site.webmanifest" />
 
         <!-- PRELOAD FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="preload"
             href="/fonts/lazer84.woff2"
@@ -86,8 +93,6 @@ const { title, description } = Astro.props;
             rel="canonical"
             href={`${site.website.url}${Astro.url.pathname}`}
         />
-        <meta name="author" content={site.author.name} />
-        <meta name="generator" content={Astro.generator} />
     </head>
     <body>
         <PrimaryHeader />

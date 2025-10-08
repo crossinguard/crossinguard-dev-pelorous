@@ -4,6 +4,8 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-family-body);
     font-weight: 345;
     font-size: var(--step-1);
@@ -52,6 +54,7 @@ a {
 
 main {
     width: 100%;
+    flex-grow: 1;
 }
 
 main:focus {
@@ -67,7 +70,7 @@ code {
 }
 
 i {
-    vertical-align: -0.1em;
+    vertical-align: -0.15em;
 }
 
 /*strong {

@@ -1,35 +1,39 @@
 ---
 import SkipLink from "./SkipLink.astro";
 import site from "../data/site.json";
+const { pathname } = Astro.url;
 ---
 
 <header role="banner">
     <SkipLink />
-    <div class="wrapper">
-        <div class="site-head repel">
-            <a
-                href="/"
-                aria-label=`${site.website.title} home`
-                class="site-head__brand cluster"
-            >
-                <img
-                    src="/crystal-circle-logo.svg"
-                    alt=`${site.website.title} logo`
-                />
-                <p>{site.website.title}</p>
-            </a>
-            <nav aria-label="primary">
-                <ul role="list" class="cluster">
-                    {
-                        site.website.navigation.map((item) => (
-                            <li>
-                                <a href={item.url}>{item.name}</a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </nav>
-        </div>
+    <div class="site-head wrapper repel" data-center-stack>
+        <a
+            href="/"
+            aria-label=`${site.website.title} home`
+            class="site-head__brand cluster"
+        >
+            <img
+                src="/crystal-circle-logo.svg"
+                alt=`${site.website.title} logo`
+            />
+            <p>{site.website.title}</p>
+        </a>
+        <nav aria-label="primary">
+            <ul role="list" class="cluster">
+                {
+                    site.website.navigation.map((item) => (
+                        <li>
+                            <a
+                                href={item.url}
+                                class={pathname === item.url ? "active" : ""}
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
     </div>
 </header>
 
@@ -41,7 +45,12 @@ import site from "../data/site.json";
             0 0.25rem var(--color-primary),
             0 0.5rem var(--color-secondary),
             0 0.75rem var(--color-tertiary);
-        margin-block-end: 1.5rem;
+        margin-block-end: var(--space-xl);
+        padding-block: var(--space-s);
+    }
+
+    .site-head {
+        --gutter: var(--space-xs);
     }
 
     .site-head :focus {
@@ -49,17 +58,21 @@ import site from "../data/site.json";
     }
 
     .site-head__brand {
-        --gutter: 0.5rem;
+        --gutter: var(--space-2xs);
         text-decoration: none;
+
+        opacity: 0.9;
+        transition: all 0.3s ease;
     }
 
     .site-head__brand img {
-        width: var(--step-5);
+        width: var(--space-xl);
     }
 
     .site-head__brand p {
-        font-family: "Lazer84";
+        font-family: var(--font-family-accent);
         text-shadow: 1px 1px 2px var(--color-dark);
+        font-size: var(--step-1);
     }
 
     nav ul {
@@ -67,27 +80,30 @@ import site from "../data/site.json";
     }
 
     nav a {
-        font-variation-settings: "wght" 600;
+        font-weight: 600;
         text-transform: uppercase;
         text-decoration: none;
         color: currentColor;
         text-shadow: 1px 1px 2px var(--color-dark);
+        opacity: 0.9;
+        transition: all 0.2s ease;
+    }
+
+    .active {
+        color: var(--color-pop);
+        text-decoration: underline;
+        text-decoration-color: var(--color-pop);
+        text-decoration-thickness: 0.15rem;
+        text-underline-offset: 0.25rem;
+        opacity: 1;
     }
 
     .site-head__brand:hover p,
     nav a:hover {
         color: var(--color-tertiary);
         text-decoration: underline;
-        text-decoration-color: var(--color-primary);
+        text-decoration-color: var(--color-pop);
         text-decoration-thickness: 0.25rem;
         text-underline-offset: 0.25rem;
-    }
-
-    @media (max-width: 550px) {
-        .site-head {
-            --gutter: 0 clamp(1rem, 1rem + 0.5dvw, 2rem);
-            flex-direction: column;
-            padding-block-start: 1rem;
-        }
     }
 </style>

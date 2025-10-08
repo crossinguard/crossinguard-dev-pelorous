@@ -10,4 +10,5 @@
     font-family: "League Spartan Variable";
     src: url("/fonts/LeagueSpartanVariable.woff2") format("woff2-variations");
     font-weight: 200 900;
+    font-display: swap;
 }

@@ -1,0 +1,67 @@
+/*
+COLOR UTILITIES
+Single-purpose color classes for quick application.
+Uses !important to guarantee application per CUBE CSS methodology.
+*/
+
+/* Background colors */
+.bg-light {
+    background-color: var(--color-light) !important;
+}
+
+.bg-light-shade {
+    background-color: var(--color-light-shade) !important;
+}
+
+.bg-dark {
+    background-color: var(--color-dark) !important;
+}
+
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+.bg-primary-shade {
+    background-color: var(--color-primary-shade) !important;
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary) !important;
+}
+
+.bg-tertiary {
+    background-color: var(--color-tertiary) !important;
+}
+
+.bg-pop {
+    background-color: var(--color-pop) !important;
+}
+
+/* Text colors */
+.text-light {
+    color: var(--color-light) !important;
+}
+
+.text-dark {
+    color: var(--color-dark) !important;
+}
+
+.text-primary {
+    color: var(--color-primary) !important;
+}
+
+.text-primary-shade {
+    color: var(--color-primary-shade) !important;
+}
+
+.text-secondary {
+    color: var(--color-secondary) !important;
+}
+
+.text-tertiary {
+    color: var(--color-tertiary) !important;
+}
+
+.text-pop {
+    color: var(--color-pop) !important;
+}

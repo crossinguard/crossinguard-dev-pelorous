@@ -1,0 +1,105 @@
+/*
+SPACING UTILITIES
+Single-purpose spacing classes using fluid space scale.
+Uses !important to guarantee application per CUBE CSS methodology.
+*/
+
+/* Flow space overrides - for use with .flow composition */
+.flow-space-3xs {
+    --flow-space: var(--space-3xs) !important;
+}
+
+.flow-space-2xs {
+    --flow-space: var(--space-2xs) !important;
+}
+
+.flow-space-xs {
+    --flow-space: var(--space-xs) !important;
+}
+
+.flow-space-s {
+    --flow-space: var(--space-s) !important;
+}
+
+.flow-space-m {
+    --flow-space: var(--space-m) !important;
+}
+
+.flow-space-l {
+    --flow-space: var(--space-l) !important;
+}
+
+.flow-space-xl {
+    --flow-space: var(--space-xl) !important;
+}
+
+.flow-space-2xl {
+    --flow-space: var(--space-2xl) !important;
+}
+
+.flow-space-3xl {
+    --flow-space: var(--space-3xl) !important;
+}
+
+/* Gap overrides - for use with .cluster, .repel, etc */
+.gap-3xs {
+    --gutter: var(--space-3xs) !important;
+}
+
+.gap-2xs {
+    --gutter: var(--space-2xs) !important;
+}
+
+.gap-xs {
+    --gutter: var(--space-xs) !important;
+}
+
+.gap-s {
+    --gutter: var(--space-s) !important;
+}
+
+.gap-m {
+    --gutter: var(--space-m) !important;
+}
+
+.gap-l {
+    --gutter: var(--space-l) !important;
+}
+
+.gap-xl {
+    --gutter: var(--space-xl) !important;
+}
+
+.gap-2xl {
+    --gutter: var(--space-2xl) !important;
+}
+
+.gap-3xl {
+    --gutter: var(--space-3xl) !important;
+}
+
+/* Margin utilities */
+.margin-block-start-0 {
+    margin-block-start: 0 !important;
+}
+
+.margin-block-end-0 {
+    margin-block-end: 0 !important;
+}
+
+.margin-inline-0 {
+    margin-inline: 0 !important;
+}
+
+/* Padding utilities */
+.padding-0 {
+    padding: 0 !important;
+}
+
+.padding-block-0 {
+    padding-block: 0 !important;
+}
+
+.padding-inline-0 {
+    padding-inline: 0 !important;
+}
