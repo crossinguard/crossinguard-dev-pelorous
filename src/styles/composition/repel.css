@@ -15,7 +15,7 @@ Can be any acceptable flexbox alignment value.
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: var(--repel-vertical-alignment, center);
-    gap: var(--gutter);
+    gap: var(--gutter, var(--space-s-l));
 }
 
 .repel[data-nowrap] {
