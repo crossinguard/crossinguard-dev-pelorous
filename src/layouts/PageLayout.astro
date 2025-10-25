@@ -1,0 +1,42 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import { getEntry, render } from "astro:content";
+// import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    pageID: string;
+}
+
+const { pageID } = Astro.props;
+
+const page = await getEntry("pages", pageID);
+
+if (!page) {
+    throw new Error(`Could not find page: ${pageID}`);
+}
+const { Content } = await render(page);
+---
+
+<BaseLayout title={page.data.title} description={page.data.description}>
+    <h1>
+        {page.data.icon && <Icon name={page.data.icon} />}
+        {page.data.title}
+    </h1>
+    <p>{page.data.description}</p>
+    <hr />
+
+    <!-- PAGE CONTENT FROM MARKDOWN -->
+    <Content />
+
+    <!-- OPTIONAL ADDITIONAL CONTENT -->
+    <slot />
+</BaseLayout>
+
+<style>
+    [data-icon] {
+        color: var(--color-secondary);
+        font-size: var(--step-5);
+        vertical-align: -0.1em;
+    }
+</style>

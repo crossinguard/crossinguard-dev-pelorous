@@ -1,27 +1,12 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/CardPost.astro";
+import { getCollection } from "astro:content";
 
-import { getCollection, getEntry, render } from "astro:content";
-
-const page = await getEntry("pages", "posts");
-
-if (!page) {
-    throw new Error("Could not find posts page");
-}
-
-const { Content } = await render(page);
 const posts = await getCollection("posts");
 ---
 
-<BaseLayout title={page.data.title} description={page.data.description}>
-    <h1><i class="ph ph-text-columns"></i> {page.data.title}</h1>
-    <p>{page.data.description}</p>
-    <hr />
-
-    <!-- POST PAGE CONTENT -->
-    <Content />
-
+<PageLayout pageID="posts">
     <!-- GENERATED LIST OF POSTS -->
     <section class="grid">
         {
@@ -36,6 +21,4 @@ const posts = await getCollection("posts");
             ))
         }
     </section>
-</BaseLayout>
-
-<style></style>
+</PageLayout>

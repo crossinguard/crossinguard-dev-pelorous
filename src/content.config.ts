@@ -2,12 +2,12 @@
 import { defineCollection, z } from "astro:content";
 
 // 2. Import loader(s)
-import { glob, file } from "astro/loaders";
+import { glob } from "astro/loaders";
 
 // 3. Define your collection(s)
 const posts = defineCollection({
   loader: glob({
-    pattern: ["**/*.md", "!**/_*.md"],
+    pattern: "**/*.{md,mdx}",
     base: "./src/content/posts",
   }),
   schema: z.object({
@@ -28,7 +28,7 @@ const posts = defineCollection({
 
 const projects = defineCollection({
   loader: glob({
-    pattern: ["**/*.md", "!**/_*.md"],
+    pattern: "**/*.{md,mdx}",
     base: "./src/content/projects",
   }),
   schema: z.object({
@@ -50,12 +50,13 @@ const projects = defineCollection({
 
 const pages = defineCollection({
   loader: glob({
-    pattern: ["**/*.md", "!**/_*.md"],
+    pattern: "**/*.{md,mdx}",
     base: "./src/content/pages",
   }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    icon: z.string().optional(),
     image: z
       .object({
         src: z.string(),

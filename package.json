@@ -2,7 +2,7 @@
   "name": "crossinguard-dev-pelorous",
   "type": "module",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -10,7 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@phosphor-icons/web": "^2.1.2",
-    "astro": "5.14.6"
+    "@astrojs/mdx": "^4.3.8",
+    "astro": "5.14.6",
+    "astro-icon": "^1.1.5"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.2.2"
   }
 }

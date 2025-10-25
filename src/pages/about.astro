@@ -1,19 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-import { getEntry, render } from "astro:content";
-const page = await getEntry("pages", "about");
-
-if (!page) {
-    // Handle Error, for example:
-    throw new Error("Could not find about page");
-}
-const { Content } = await render(page);
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<BaseLayout title={page.data.title} description={page.data.description}>
-    <h1><i class="ph ph-info"></i> {page.data.title}</h1>
-    <p>{page.data.description}</p>
-    <hr />
-    <Content />
-</BaseLayout>
+<PageLayout pageID="about" />

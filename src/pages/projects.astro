@@ -1,27 +1,12 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/CardProject.astro";
+import { getCollection } from "astro:content";
 
-import { getCollection, getEntry, render } from "astro:content";
-
-const page = await getEntry("pages", "projects");
-
-if (!page) {
-    throw new Error("Could not find projects page");
-}
-
-const { Content } = await render(page);
 const projects = await getCollection("projects");
 ---
 
-<BaseLayout title={page.data.title} description={page.data.description}>
-    <h1><i class="ph ph-gear"></i> {page.data.title}</h1>
-    <p>{page.data.description}</p>
-    <hr />
-
-    <!-- PROJECT PAGE CONTENT -->
-    <Content />
-
+<PageLayout pageID="projects">
     <!-- GENERATED LIST OF PROJECTS -->
     <section class="cluster">
         {
@@ -36,4 +21,4 @@ const projects = await getCollection("projects");
             ))
         }
     </section>
-</BaseLayout>
+</PageLayout>

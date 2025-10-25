@@ -2,6 +2,17 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Working Mode
+
+**IMPORTANT**: When assisting with this project, you MUST follow this working mode:
+- **NEVER use Edit, Write, or any file modification tools directly**
+- **ALWAYS provide code suggestions and explanations only**
+- Show the user what changes should be made by displaying code blocks
+- Explain where changes should be made (file paths and line numbers)
+- The user will make all file modifications themselves
+
+You may still use Read, Grep, Glob, and Bash tools to analyze the codebase and run commands, but never modify files directly.
+
 ## Commands
 
 All commands are run from the root of the project:
