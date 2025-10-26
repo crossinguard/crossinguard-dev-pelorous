@@ -12,7 +12,7 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
 ---
 
 <article class="box">
-    <div class="date-status cluster">
+    <div class="date-status repel">
         <p class="date">
             {
                 pubDate.toLocaleDateString("en-US", {
@@ -25,7 +25,7 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
         <p class="status">{status}</p>
     </div>
     <h2 class="title">
-        <a href={`/projects/${id}`}>{title} </a>
+        <a href={`/projects/${id}`} class="link">{title}</a>
     </h2>
     <p class="description">
         {description}
@@ -45,7 +45,8 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
     .box {
         --box-border-width: 1px;
         --box-bg: var(--color-light-shade);
-        border-radius: 1.25rem;
+        --box-padding: var(--space-s);
+        width: 100%;
         filter: drop-shadow(
             var(--space-3xs) var(--space-3xs) var(--color-dark)
         );
@@ -56,18 +57,10 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
         filter: drop-shadow(var(--space-2xs) var(--space-2xs));
     }
 
-    .title {
-        color: var(--color-dark);
-        font-size: var(--step-2);
-        transition: color 0.2s ease-in;
-    }
-
-    .title:hover {
-        color: var(--color-primary-shade);
-    }
-
-    .date-status {
-        --gutter: var(--space-2xs);
+    .box:has(.link:hover) {
+        filter: drop-shadow(
+            var(--space-2xs) var(--space-2xs) var(--color-primary-shade)
+        );
     }
 
     .date {
@@ -76,15 +69,20 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
 
     .status {
         font-size: var(--step--1);
-        padding-inline: var(--space-3xs);
-        color: var(--color-light);
-        background: var(--color-primary-shade);
-        border-radius: 0.25rem;
         opacity: 0.8;
     }
 
-    a {
+    .title {
+        font-size: var(--step-2);
+    }
+
+    .link {
         text-decoration: none;
+        transition: color 0.2s ease-in;
+    }
+
+    .link:hover {
+        color: var(--color-primary-shade);
     }
 
     .tags {

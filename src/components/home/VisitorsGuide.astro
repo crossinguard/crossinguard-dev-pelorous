@@ -8,10 +8,16 @@ const navPages = allPages
     .sort((a, b) => (a.data.navOrder || 999) - (b.data.navOrder || 999));
 ---
 
-<section class="visitor-guide">
+<section class="visitor-guide flow">
+    <h2>Visitor's Guide</h2>
+    <p>
+        This site is my digital home—a place that I control with no ads, no
+        tracking, no algorithms, and no trend chasing. Like a pair of cargo
+        shorts, I offer a 100% <em>"I am not trendy"</em> guarantee.
+    </p>
     {
         navPages.map((page) => (
-            <div class="guide-section flow">
+            <div class="box flow">
                 <h3>
                     {page.data.icon && <Icon name={page.data.icon} />}
                     <a href={`/${page.id}`}>{page.data.title}</a>
@@ -24,13 +30,13 @@ const navPages = allPages
 
 <style>
     .visitor-guide {
-        margin-block: var(--space-l);
-        max-width: 45ch;
-        margin-inline: auto;
     }
 
-    .guide-section {
-        padding-block: var(--space-s);
+    .box {
+        --box-padding: var(--space-s);
+        max-width: 45ch;
+        margin-inline: auto;
+        border: 2px solid var(--color-dark);
     }
 
     [data-icon],
@@ -46,9 +52,5 @@ const navPages = allPages
 
     a:hover {
         color: var(--color-primary);
-    }
-
-    [data-icon] {
-        vertical-align: -0.1em;
     }
 </style>

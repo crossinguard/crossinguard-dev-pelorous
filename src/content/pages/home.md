@@ -3,15 +3,7 @@ title: "Home"
 description: "The personal website for Brett Egbert and his nerdy little projects."
 showInNav: false
 ---
-import { Icon } from "astro-icon/components";
-import VisitorsGuide from "../../components/home/VisitorsGuide.astro";
 
 Hey there! My name is **Brett Egbert** and this is my site.
 
 I am an educator obsessed with the belief that things worth knowing should not be miserable to learn. I live in the overlapping Venn diagram of **math ed**, **assessment**, and **web development**.
-
-## Visitor's Guide
-
-This site is my digital home—a place that I control with no ads, no tracking, no algorithms, and no trend chasing. Like a pair of cargo shorts, I offer a 100% *"I am not trendy"* guarantee.
-
-<VisitorsGuide />

@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import SkipLink from "./SkipLink.astro";
 import { getCollection } from "astro:content";
-import site from "../data/site.json";
+import site from "../../data/site.json";
 
 const { pathname } = Astro.url;
 const allPages = await getCollection("pages");

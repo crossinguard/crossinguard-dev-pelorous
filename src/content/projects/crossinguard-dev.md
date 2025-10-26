@@ -3,7 +3,7 @@ title: "www.crossinguard.dev"
 description: "The personal website for Brett Egbert and his nerdy little projects."
 pubDate: "2025-10-25"
 status: "under development"
-tags: ["web dev", "personal"]
+tags: ["web-dev", "personal"]
 ---
 
 This website is my own personal creation, built using the following tools and resources:

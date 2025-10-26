@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import VisitorsGuide from "../components/home/VisitorsGuide.astro";
 
 import { getEntry, render } from "astro:content";
 const page = await getEntry("pages", "home");
 
 if (!page) {
-    // Handle Error, for example:
     throw new Error("Could not find home page");
 }
 const { Content } = await render(page);
@@ -14,4 +14,5 @@ const { Content } = await render(page);
 <BaseLayout title={page.data.title} description={page.data.description}>
     <h1>Welcome {page.data.title}</h1>
     <Content />
+    <VisitorsGuide />
 </BaseLayout>
