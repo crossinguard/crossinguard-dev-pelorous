@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 interface Props {
     title: string;
     description: string;
@@ -25,7 +26,9 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
         <p class="status">{status}</p>
     </div>
     <h2 class="title">
-        <a href={`/projects/${id}`} class="link">{title}</a>
+        <a href={`/projects/${id}`} class="link"
+            >{title} <Icon name="ph:arrow-right" /></a
+        >
     </h2>
     <p class="description">
         {description}
@@ -83,6 +86,10 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
 
     .link:hover {
         color: var(--color-primary-shade);
+
+        [data-icon] {
+            color: inherit;
+        }
     }
 
     .tags {
@@ -95,5 +102,11 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
     .tag {
         font-family: var(--font-family-mono);
         font-size: var(--step--3);
+    }
+
+    [data-icon] {
+        color: transparent;
+        vertical-align: -0.15em;
+        transition: color 0.2s ease-in;
     }
 </style>
