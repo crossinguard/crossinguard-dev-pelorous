@@ -3,34 +3,42 @@ interface Props {
     title: string;
     description: string;
     pubDate: Date;
+    status: string;
     id: string;
     tags?: string[];
 }
 
-const { title, description, pubDate, id, tags } = Astro.props;
+const { title, description, pubDate, status, id, tags } = Astro.props;
 ---
 
 <article class="box">
-    <a href={`/projects/${id}`}>
+    <div class="date-status cluster">
         <p class="date">
-            <em>
-                {
-                    pubDate.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                    })
-                }
-            </em>
+            {
+                pubDate.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                })
+            }
         </p>
-        <h2 class="title">
-            {title}
-        </h2>
-        <p class="description">
-            {description}
-        </p>
-        {tags && <p class="tags">{tags}</p>}
-    </a>
+        <p class="status">{status}</p>
+    </div>
+    <h2 class="title">
+        <a href={`/projects/${id}`}>{title} </a>
+    </h2>
+    <p class="description">
+        {description}
+    </p>
+    {
+        tags && tags.length > 0 && (
+            <ul class="tags cluster">
+                {tags.map((tag) => (
+                    <li class="tag">#{tag}</li>
+                ))}
+            </ul>
+        )
+    }
 </article>
 
 <style>
@@ -46,22 +54,48 @@ const { title, description, pubDate, id, tags } = Astro.props;
 
     .box:hover {
         filter: drop-shadow(var(--space-2xs) var(--space-2xs));
-        .title {
-            color: var(--color-primary-shade);
-        }
     }
 
     .title {
         color: var(--color-dark);
-        transition: color 0.2s ease-in;
         font-size: var(--step-2);
+        transition: color 0.2s ease-in;
+    }
+
+    .title:hover {
+        color: var(--color-primary-shade);
+    }
+
+    .date-status {
+        --gutter: var(--space-2xs);
     }
 
     .date {
         font-size: var(--step--1);
     }
 
+    .status {
+        font-size: var(--step--1);
+        padding-inline: var(--space-3xs);
+        color: var(--color-light);
+        background: var(--color-primary-shade);
+        border-radius: 0.25rem;
+        opacity: 0.8;
+    }
+
     a {
         text-decoration: none;
+    }
+
+    .tags {
+        --gutter: var(--space-xs);
+        list-style: none;
+        padding: 0;
+        margin-block: 0;
+    }
+
+    .tag {
+        font-family: var(--font-family-mono);
+        font-size: var(--step--3);
     }
 </style>
