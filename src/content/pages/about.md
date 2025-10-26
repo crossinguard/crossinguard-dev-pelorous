@@ -2,6 +2,8 @@
 title: "About"
 description: "Information about where I've been, what I'm doing, and where I'm heading."
 icon: "ph:info"
+navOrder: 3
+showInNav: true
 ---
 
 ![Brett Egbert](../../assets/brett-egbert.webp)

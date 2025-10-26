@@ -1,0 +1,21 @@
+---
+import CardProject from "./CardProject.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<section class="cluster">
+    {
+        projects.map((project, index) => (
+            <CardProject
+                title={project.data.title}
+                description={project.data.description}
+                pubDate={project.data.pubDate}
+                status={project.data.status}
+                id={project.id}
+                tags={project.data.tags}
+            />
+        ))
+    }
+</section>

@@ -1,8 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 import SkipLink from "./SkipLink.astro";
+import { getCollection } from "astro:content";
 import site from "../data/site.json";
+
 const { pathname } = Astro.url;
+const allPages = await getCollection("pages");
+const navPages = allPages
+    .filter((page) => page.data.showInNav !== false)
+    .sort((a, b) => (a.data.navOrder || 999) - (b.data.navOrder || 999));
 ---
 
 <header role="banner">
@@ -19,16 +25,19 @@ const { pathname } = Astro.url;
         <nav aria-label="primary">
             <ul role="list" class="cluster">
                 {
-                    site.website.navigation.map((item) => (
-                        <li>
-                            <a
-                                href={item.url}
-                                class={pathname === item.url ? "active" : ""}
-                            >
-                                {item.name}
-                            </a>
-                        </li>
-                    ))
+                    navPages.map((page) => {
+                        const pageUrl = `/${page.id}`;
+                        return (
+                            <li>
+                                <a
+                                    href={pageUrl}
+                                    class={pathname === pageUrl ? "active" : ""}
+                                >
+                                    {page.data.title}
+                                </a>
+                            </li>
+                        );
+                    })
                 }
             </ul>
         </nav>

@@ -1,32 +1,23 @@
 ---
 import { Icon } from "astro-icon/components";
-import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
-const postsPage = await getEntry("pages", "posts");
-const projectsPage = await getEntry("pages", "projects");
-const aboutPage = await getEntry("pages", "about");
-
-const sections = [
-    { page: postsPage, route: "/posts" },
-    { page: projectsPage, route: "/projects" },
-    { page: aboutPage, route: "/about" },
-];
+const allPages = await getCollection("pages");
+const navPages = allPages
+    .filter((page) => page.data.showInNav !== false)
+    .sort((a, b) => (a.data.navOrder || 999) - (b.data.navOrder || 999));
 ---
 
 <section class="visitor-guide">
     {
-        sections.map((section, index) => (
-            <>
-                <div class="guide-section flow">
-                    <h3>
-                        {section.page?.data.icon && (
-                            <Icon name={section.page.data.icon} />
-                        )}
-                        <a href={section.route}>{section.page?.data.title}</a>
-                    </h3>
-                    <p>{section.page?.data.description}</p>
-                </div>
-            </>
+        navPages.map((page) => (
+            <div class="guide-section flow">
+                <h3>
+                    {page.data.icon && <Icon name={page.data.icon} />}
+                    <a href={`/${page.id}`}>{page.data.title}</a>
+                </h3>
+                <p>{page.data.description}</p>
+            </div>
         ))
     }
 </section>
@@ -47,23 +38,17 @@ const sections = [
         display: flex;
         gap: var(--space-3xs);
         font-size: var(--step-2);
+    }
+
+    a {
         transition: color 0.2s ease-in;
     }
 
-    h3:hover {
+    a:hover {
         color: var(--color-primary);
-
-        [data-icon] {
-            color: var(--color-secondary);
-        }
-    }
-
-    p {
-        font-style: italic;
     }
 
     [data-icon] {
         vertical-align: -0.1em;
-        transition: color 0.2s ease-in;
     }
 </style>

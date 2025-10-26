@@ -1,25 +1,8 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import Card from "../components/CardProject.astro";
-import { getCollection } from "astro:content";
-
-const projects = await getCollection("projects");
+import GridProjects from "../components/projects/GridProjects.astro";
 ---
 
 <PageLayout pageID="projects">
-    <!-- GENERATED LIST OF PROJECTS -->
-    <section class="cluster">
-        {
-            projects.map((project, index) => (
-                <Card
-                    title={project.data.title}
-                    description={project.data.description}
-                    pubDate={project.data.pubDate}
-                    status={project.data.status}
-                    id={project.id}
-                    tags={project.data.tags}
-                />
-            ))
-        }
-    </section>
+    <GridProjects />
 </PageLayout>

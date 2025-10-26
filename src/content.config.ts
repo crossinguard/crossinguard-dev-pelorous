@@ -5,6 +5,26 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 // 3. Define your collection(s)
+const pages = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "./src/content/pages",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    icon: z.string().optional(),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
+    navOrder: z.number().optional(),
+    showInNav: z.boolean().default(true),
+  }),
+});
+
 const posts = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
@@ -43,26 +63,7 @@ const projects = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     status: z.string(),
-    // repo: z.url().optional(),
     tags: z.array(z.string()).optional(),
-  }),
-});
-
-const pages = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdx}",
-    base: "./src/content/pages",
-  }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    icon: z.string().optional(),
-    image: z
-      .object({
-        src: z.string(),
-        alt: z.string(),
-      })
-      .optional(),
   }),
 });
 
