@@ -3,6 +3,7 @@ title: "The Ocean"
 description: "Digital art based on a childhood favorite book."
 pubDate: "2023-07-01"
 status: "complete"
+category: "creative-club"
 tags: ["digital-art"]
 image:
   src: "/src/assets/creative-club/aaahh-real-monsters.png"

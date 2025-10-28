@@ -3,6 +3,7 @@ title: "Nature"
 description: "Magic wand I created so I could be a member of Wand Club."
 pubDate: "2022-11-01"
 status: "complete"
+category: "creative-club"
 tags: ["physical-art", "wand-club"]
 image:
   src: "/src/assets/creative-club/wand.jpg"

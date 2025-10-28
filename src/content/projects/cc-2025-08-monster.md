@@ -3,6 +3,7 @@ title: "Monster"
 description: "Digital art created to the theme of 'Monster'."
 pubDate: "2025-08-01"
 status: "complete"
+category: "creative-club"
 tags: ["digital-art", "aaahh!!!"]
 image:
   src: "/src/assets/creative-club/aaahh-real-monsters.png"

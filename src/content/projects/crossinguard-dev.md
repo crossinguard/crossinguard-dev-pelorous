@@ -3,10 +3,13 @@ title: "www.crossinguard.dev"
 description: "The personal website for Brett Egbert and his nerdy little projects."
 pubDate: "2025-10-25"
 status: "under development"
+category: "web-dev"
 tags: ["web-dev", "personal"]
 ---
 
-This website is my own personal creation, built using the following tools and resources:
+This website is my own personal creation. A more comprehensive writeup is coming, I just need to stop fiddling with the pieces first!
+
+## Tools and resources:
 
 - web framework: [Astro](https://astro.build/)
 - online repository: [GitHub](https://github.com/)
@@ -22,4 +25,4 @@ This website is my own personal creation, built using the following tools and re
 - fluid design: [Utopia](https://utopia.fyi/)
 - code editor: [Zed](https://zed.dev/)
 - ai: [Claude Code](https://claude.com/product/claude-code)
-  - *Note: My preference, whether talking about basic text prediction or full-on generative AI, is for the tool to stay out of the way until it is needed. I use Claude Code in a side panel with no auto suggestions or inline use. Claude Code does not directly edit my code. All written text, including page content, my articles, project documention, etc. is entirely written by me with no AI input.*
+  - *Note: My preference, whether talking about basic text prediction or full-on generative AI, is for the tool to stay out of the way until it is needed. I don't like others guessing what I am going to say before I say it. I use Claude Code in a side panel with no auto suggestions or inline use. Claude Code does not directly edit my code. All written text, including page content, my articles, project documention, etc. is entirely written by me with no AI input. My approach to this is ever evolving.*

@@ -3,6 +3,7 @@ title: "Repurpose"
 description: "Repurposing an old workbench gone wrong into a better pantry."
 pubDate: "2023-03-01"
 status: "complete"
+category: "creative-club"
 tags: ["woodworking", "home-improvement"]
 image:
   src: "/src/assets/creative-club/repurposed-pantry.jpg"

@@ -2,12 +2,26 @@
 import CardProject from "./CardProject.astro";
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("projects");
+interface Props {
+    category?: string;
+}
+
+const { category } = Astro.props;
+
+const allProjects = await getCollection("projects");
+
+const filteredProjects = category
+    ? allProjects.filter((project) => project.data.category === category)
+    : allProjects;
+
+const sortedProjects = filteredProjects.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
-<section class="cluster">
+<div class="cluster">
     {
-        projects.map((project, index) => (
+        sortedProjects.map((project) => (
             <CardProject
                 title={project.data.title}
                 description={project.data.description}
@@ -18,4 +32,4 @@ const projects = await getCollection("projects");
             />
         ))
     }
-</section>
+</div>

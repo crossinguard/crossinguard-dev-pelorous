@@ -3,6 +3,7 @@ title: "Love and Pain (Vampire)"
 description: "A fictional story of an artist reflecting back on their painting's origins."
 pubDate: "2023-01-01"
 status: "complete"
+category: "creative-club"
 tags: ["storytelling"]
 image:
   src: "/src/assets/creative-club/love-and-pain.jpg"

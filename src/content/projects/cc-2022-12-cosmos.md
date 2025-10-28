@@ -1,8 +1,9 @@
 ---
 title: "Cosmos"
 description: "An experiment in AI storytelling."
-pubDate: "2022-11-01"
+pubDate: "2022-12-01"
 status: "complete"
+category: "creative-club"
 tags: ["digital-art?", "ai", "storytelling"]
 image:
   src: "/src/assets/creative-club/cosmos.png"

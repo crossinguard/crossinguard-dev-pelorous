@@ -3,6 +3,7 @@ title: "Dinosaurs"
 description: "A live performance of the Jurassic Park theme song. I haven't played sax since high school."
 pubDate: "2023-02-01"
 status: "complete"
+category: "creative-club"
 tags: ["sax", "performance"]
 ---
 

@@ -3,6 +3,7 @@ title: "Toast"
 description: "Turning my cat into a block print."
 pubDate: "2023-04-01"
 status: "complete"
+category: "creative-club"
 tags: ["physical-art", "toast"]
 image:
   src: "/src/assets/creative-club/aaahh-real-monsters.png"
