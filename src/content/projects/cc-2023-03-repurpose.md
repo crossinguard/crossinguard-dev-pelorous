@@ -20,4 +20,4 @@ My wife and I decided to work together for our project this month. We tore out t
 
 I dabble in woodworking but am far from a professional. That means making something like a box is both super easy and way harder than I think it will be. I cut up a sheet of plywood using my track saw, predrilled some holes, and used wood glue + screws to assemble the boxes.
 
-We wanted our pantry to be free-floating without feet so these are attached to the wall with french cleats. We thought we might actually make use of the grooves somehow but that for sure hasn't happened.
+We wanted our pantry to be free-floating without feet so these are attached to the wall with [French cleats](https://en.wikipedia.org/wiki/French_cleat). We thought we might actually make use of the grooves somehow but that for sure hasn't happened.
