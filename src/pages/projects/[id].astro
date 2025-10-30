@@ -11,8 +11,23 @@ export async function getStaticPaths() {
         props: { project },
     }));
 }
+
 const { project } = Astro.props;
 const { Content } = await render(project);
+
+// Date formatting helper
+const formatDate = (date: Date) =>
+    date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    });
+
+const pubDate = formatDate(project.data.pubDate);
+const updatedDate = project.data.updatedDate
+    ? formatDate(project.data.updatedDate)
+    : null;
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
     "/src/assets/**/*.{jpeg,jpg,png,gif,webp,avif}",
 );
@@ -22,15 +37,40 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     <article class="flow">
         <h1 class="title">{project.data.title}</h1>
         <p class="description">{project.data.description}</p>
-        <p class="meta">
-            posted {
-                project.data.pubDate.toLocaleDateString("en-gb", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                })
-            }
-        </p>
+        {
+            project.data.tags && project.data.tags.length > 0 && (
+                <ul role="list" class="tags cluster">
+                    {project.data.tags.map((tag) => (
+                        <li class="tag">#{tag}</li>
+                    ))}
+                </ul>
+            )
+        }
+        <div class="date-status repel">
+            <p class="date">
+                posted <time datetime={project.data.pubDate.toISOString()}
+                    >{pubDate}</time
+                >
+                {
+                    project.data.updatedDate && (
+                        <>
+                            {" "}
+                            •{" "}
+                            <span>
+                                updated{" "}
+                                <time
+                                    datetime={project.data.updatedDate.toISOString()}
+                                >
+                                    {updatedDate}
+                                </time>
+                            </span>
+                        </>
+                    )
+                }
+            </p>
+            <p class="status">{project.data.status}</p>
+        </div>
+
         <hr />
         {
             project.data.image &&
@@ -59,11 +99,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 </BaseLayout>
 
 <style>
-    .meta {
-        font-size: var(--step-0);
-        opacity: 0.8;
-    }
-
     .project-image {
         margin-block-end: var(--space-xl);
     }
@@ -74,6 +109,19 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         max-height: 50rem;
         margin-inline: auto;
         border: solid var(--space-s) var(--color-dark);
+    }
+
+    .date,
+    .status {
+        font-size: var(--step-0);
+        opacity: 0.8;
+    }
+
+    .tags {
+        font-size: var(--step--1);
+        opacity: 0.8;
+        padding: 0;
+        font-family: var(--font-family-mono);
     }
 
     hr {

@@ -2,7 +2,7 @@
 title: "Drawbridge (planned)"
 description: "Tools for modern assessment developers."
 pubDate: "2025-09-28"
-updatedDtae: "2025-10-28"
+updatedDate: "2025-10-28"
 category: "assessment"
 status: "in design"
 tags: ["assessment", "tools"]
