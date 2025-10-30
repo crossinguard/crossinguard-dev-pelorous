@@ -11,7 +11,8 @@ image:
 ---
 
 > "The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff."
-> -*Carl Sagan, Cosmos (1980)*
+>
+> -Carl Sagan, Cosmos (1980)
 
 ## About my cosmos project
 

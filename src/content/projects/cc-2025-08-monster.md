@@ -1,6 +1,6 @@
 ---
 title: "Monster"
-description: "Digital art created to the theme of 'Monster'."
+description: "Sending Ickis, Oblina, and Krumm on a nighttime adventure."
 pubDate: "2025-08-01"
 status: "complete"
 category: "creative-club"

@@ -15,7 +15,9 @@ tags: ["storytelling"]
 
 *A ruler sits on a throne, indifferent to the lives around it. It's crown is worn by divine right, a destiny made manifest, an earned reward for past actions. It's value is escalated, seated highest in a chain made by chains. A need is there and a ruler requires. A ruler is a guiding force, forging a path for others to follow.*
 
-*I am not a ruler. My path isn't for others and my priorities will evolve. I shut down from pressure. I am on my own path and I accept that I am not a ruler.*
+*I am not a ruler. My path isn't for others and my priorities will evolve. I shut down from pressure.*
+
+*I am on my own path and I accept that I am not a ruler.*
 
 *I am not a ruler. I am a king. I am a king of my own world, my own life, my own path. I rule myself by the highest authority, my own.*
 
@@ -23,7 +25,7 @@ tags: ["storytelling"]
 
 ## About my owl king project
 
-During the summer of 2023 I was the target of a surprise reduction in force (RIF) at my university. Thursday morning I had a job, and by that afternoon I was unemployed with no guess as to why. The bulk of my team was let go, all the way up through our department director.
+During the summer of 2023 I was the target of a surprise reduction in force (RIF) at my university. Thursday morning I had a job, and by that afternoon I was unemployed, locked out of the system, and had no answers to go with my pile of questions. The bulk of my team was immediately and unexpectedly let go, all the way up through our department director. We were treated like assets, not people.
 
 Writing isn't really my coping mechanism of choice, but this seemed like a good opportunity to work through some feelings.
 
