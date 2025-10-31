@@ -4,9 +4,10 @@ import { getCollection } from "astro:content";
 
 interface Props {
     category?: string;
+    layout?: string;
 }
 
-const { category } = Astro.props;
+const { category, layout = "cluster" } = Astro.props;
 
 const allProjects = await getCollection("projects");
 
@@ -19,7 +20,7 @@ const sortedProjects = filteredProjects.sort(
 );
 ---
 
-<div class="cluster">
+<div class={layout} data-layout="thirds">
     {
         sortedProjects.map((project) => (
             <CardProject
