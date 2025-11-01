@@ -18,7 +18,14 @@ import GridProjects from "../components/projects/GridProjects.astro";
             Each month my wife's family and I pick a theme and each make a
             creative project based on the theme. These are my submissions.
         </p>
-        <GridProjects category="creative-club" />
+        <!-- <GridProjects category="creative-club" /> -->
+        <GridProjects category="creative-club" layout="grid" limit={12} />
+        <p>
+            We have now been doing this for a while. The last year or so of
+            projects are shown above, but you can check out all of them on the <a
+                href="/projects/creative">creative club projects</a
+            > page
+        </p>
     </section>
 </PageLayout>
 

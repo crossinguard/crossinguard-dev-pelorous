@@ -5,9 +5,10 @@ import { getCollection } from "astro:content";
 interface Props {
     category?: string;
     layout?: string;
+    limit?: number;
 }
 
-const { category, layout = "cluster" } = Astro.props;
+const { category, layout, limit } = Astro.props;
 
 const allProjects = await getCollection("projects");
 
@@ -18,11 +19,15 @@ const filteredProjects = category
 const sortedProjects = filteredProjects.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const displayedProjects = limit
+    ? sortedProjects.slice(0, limit)
+    : sortedProjects;
 ---
 
-<div class={layout} data-layout="thirds">
+<div class={layout}>
     {
-        sortedProjects.map((project) => (
+        displayedProjects.map((project) => (
             <CardProject
                 title={project.data.title}
                 description={project.data.description}

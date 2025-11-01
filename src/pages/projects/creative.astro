@@ -3,13 +3,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import GridProjects from "../../components/projects/GridProjects.astro";
 
 const title = "Creative Club";
-const description = "A collections of projects for a monthly creative club.";
+const description = "A collection of projects for a monthly creative club.";
 ---
 
 <BaseLayout title={title} description={description}>
     <section class="section flow">
         <h2>Creative Club</h2>
         <p>{description}</p>
-        <GridProjects category="creative-club" layout="grid" />
+        <GridProjects
+            category="creative-club"
+            layout="grid"
+            data-layout="thirds"
+        />
     </section>
 </BaseLayout>
