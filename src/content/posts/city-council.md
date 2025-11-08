@@ -1,8 +1,8 @@
 ---
 title: "City Council Position 2"
 description: "Throwing my hat in the ring and running for local public office"
-pubDate: "2025-11-06"
-updatedDate: "2025-11-08"
+pubDate: "2025-11-08"
+# updatedDate: "2025-11-08"
 tags:
   - "vote"
   - "community"

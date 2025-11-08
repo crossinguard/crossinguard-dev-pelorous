@@ -2,7 +2,7 @@
 title: "My year with Scrimba"
 description: "Projects created while bouncing around Scrimba learning paths."
 pubDate: "2025-11-07"
-updatedDate: "2025-11-07"
+# updatedDate: "2025-11-07"
 tags:
  - "web-dev"
  - "learning"
@@ -23,11 +23,23 @@ In Scrimba, the "video" is some sort of git-based screen recording piece of magi
 
 Imagine watching a coder work on a project and the video is a recording of their screen. Now take your mouse and select the text they are working on. Or switch files to one they aren't working on in the video. Or even scroll back up to the top of the page while the coder is working at the bottom of the page. In a traditional video you can't do any of these things, you are watching a recording through a specific static lens. Scrimba feels like watching a video but it is a fully interactive code window. Honestly, it's hard to explain. Just go check it out if you are curious.
 
-## Learn JavaScript
+## Certifications
+
+Like most others that give out certifications, these are nearly worthless on their own. However, the activities completed to earn the certification are how you build up muscle memory. And while I won't put any of these certs on my professional resume, I still like earning them enjoy having a partification ribbon to mark my achievement. It's easy for them to make and easy for me to enjoy, things don't need to carry meaning beyond  that.
+
+### Certificate of Completion
+
+#### Course: Intro to Astro, *Nov 6, 2025*
+
+I learned some good things in **Intro to Astro**, and since this website is built using Astro that is incredibly relevant to me. However, I experienced jank with the platform that I have not seen in the JavaScript content. Sometimes I had to ignore the output preview because it wouldn't update, no matter how much I fiddled with the console. Additionally, I would get odd error's popping up with regularity during the video portion after I submitted an exercise. The exercise would pass, I would hit play, and the recording would continue with a flash of error message every few seconds. Additionally, it would then sometimes think I had made edits and it would pause the video and fork my code. If I hit cancel it would do it again almost instantly. I found if I refreshed the page it "fixed"" both the error and pausing issues. I appreciate them making this course and I did find it worth my time, but this one was frustrating to deal with the tech issues (experienced on my laptop and desktop).
+
+## Projects
+
+### Learn JavaScript
 
 Here are the projects I created while on the **Learn JavaScript** learning path.
 
-### Passenger Counter App
+#### Passenger Counter App
 
 This app can be used to count attenance at an event. For example, I am hosting a Bingo event at my local community center next week. The room we booked has a max capacity of 85 so we need to know how many people are in the room in case we need to cap attendance. If somebody were near the door, they could log each group of 1+ coming and going.
 
@@ -55,7 +67,7 @@ The app displays the current change in people count. Hitting save updates the to
 ></script>
 
 
-### Basketball Scoreboard
+#### Basketball Scoreboard
 
 *(work in progress)*
 
