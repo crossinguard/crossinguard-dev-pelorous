@@ -43,6 +43,7 @@ const posts = defineCollection({
     updatedDate: z.coerce.date().optional(),
     series: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    draft: z.boolean().optional(),
   }),
 });
 

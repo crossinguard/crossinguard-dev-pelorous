@@ -74,4 +74,16 @@ const { title, description, pubDate, id, tags } = Astro.props;
     .link:hover {
         color: var(--color-primary-shade);
     }
+
+    .tags {
+        --gutter: var(--space-xs);
+        list-style: none;
+        padding: 0;
+        margin-block: 0;
+    }
+
+    .tag {
+        font-family: var(--font-family-mono);
+        font-size: var(--step--3);
+    }
 </style>

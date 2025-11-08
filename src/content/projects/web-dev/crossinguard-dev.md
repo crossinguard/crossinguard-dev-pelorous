@@ -4,7 +4,10 @@ description: "The personal website for Brett Egbert and his nerdy little project
 pubDate: "2025-10-25"
 status: "under development"
 category: "web-dev"
-tags: ["web-dev", "personal"]
+tags:
+  - "web-dev"
+  - "personal"
+  - "astro"
 ---
 
 This website is my own personal creation. A more comprehensive writeup is coming, I just need to stop fiddling with the pieces first!

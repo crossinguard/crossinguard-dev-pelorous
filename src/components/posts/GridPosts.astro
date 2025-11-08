@@ -2,12 +2,18 @@
 import CardPost from "./CardPost.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("posts");
+const allPosts = await getCollection("posts", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+const sortedPosts = allPosts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <section class="grid">
     {
-        posts.map((post) => (
+        sortedPosts.map((post) => (
             <CardPost
                 title={post.data.title}
                 description={post.data.description}
