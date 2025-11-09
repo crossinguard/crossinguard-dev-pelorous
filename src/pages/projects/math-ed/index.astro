@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import GridProjects from "../../../components/projects/GridProjects.astro";
+
+const title = "Math Education Projects";
+const description =
+    "Mathematics education projects, teaching resources, and educational tools.";
+---
+
+<BaseLayout title={title} description={description}>
+    <section class="section flow">
+        <h2>Math Education</h2>
+        <p>{description}</p>
+        <GridProjects collection="projectsMathEd" />
+    </section>
+</BaseLayout>

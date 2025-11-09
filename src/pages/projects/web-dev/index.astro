@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import GridProjects from "../../../components/projects/GridProjects.astro";
+
+const title = "Web Development Projects";
+const description =
+    "A collection of web development projects including personal sites, tools, and experiments.";
+---
+
+<BaseLayout title={title} description={description}>
+    <section class="section flow">
+        <h2>Web Development</h2>
+        <p>{description}</p>
+        <GridProjects collection="projectsWebDev" />
+    </section>
+</BaseLayout>

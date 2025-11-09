@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import GridProjects from "../../../components/projects/GridProjects.astro";
+
+const title = "Creative Club Projects";
+const description =
+    "Each month my wife's family and I pick a theme and each make a creative project based on the theme. These are my submissions.";
+---
+
+<BaseLayout title={title} description={description}>
+    <section class="section flow">
+        <h2>Creative Club</h2>
+        <p>{description}</p>
+        <GridProjects
+            collection="projectsCreativeClub"
+            layout="grid"
+            data-layout="thirds"
+        />
+    </section>
+</BaseLayout>

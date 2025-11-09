@@ -1,0 +1,47 @@
+---
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projectsCreativeClub");
+    return projects.map((project) => ({
+        params: { id: project.id },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<ProjectLayout project={project} Content={Content}>
+    {/* Add creative-club specific content using named slots */}
+    <div slot="metadata" class="creative-metadata">
+        {
+            project.data.theme && (
+                <p class="theme">
+                    Theme: <strong>{project.data.theme}</strong>
+                </p>
+            )
+        }
+        {
+            project.data.medium && (
+                <p class="medium">
+                    Medium: <strong>{project.data.medium}</strong>
+                </p>
+            )
+        }
+    </div>
+</ProjectLayout>
+
+<style>
+    .creative-metadata {
+        font-style: italic;
+        margin-block: var(--space-s);
+    }
+
+    .theme,
+    .medium {
+        margin-block: var(--space-2xs);
+    }
+</style>

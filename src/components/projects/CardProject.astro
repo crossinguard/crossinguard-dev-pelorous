@@ -6,10 +6,11 @@ interface Props {
     pubDate: Date;
     status: string;
     id: string;
+    basePath: string; // e.g., "assessment", "web-dev", etc.
     tags?: string[];
 }
 
-const { title, description, pubDate, status, id, tags } = Astro.props;
+const { title, description, pubDate, status, id, basePath, tags } = Astro.props;
 ---
 
 <article class="box">
@@ -26,7 +27,7 @@ const { title, description, pubDate, status, id, tags } = Astro.props;
         <p class="status">{status}</p>
     </div>
     <h2 class="title">
-        <a href={`/projects/${id}`} class="link"
+        <a href={`/projects/${basePath}/${id}`} class="link"
             >{title} <Icon name="ph:arrow-right" /></a
         >
     </h2>

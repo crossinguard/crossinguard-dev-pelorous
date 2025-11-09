@@ -3,26 +3,38 @@ import CardProject from "./CardProject.astro";
 import { getCollection } from "astro:content";
 
 interface Props {
-    category?: string;
+    collection:
+        | "projectsAssessment"
+        | "projectsData"
+        | "projectsMathEd"
+        | "projectsWebDev"
+        | "projectsCreativeClub";
     layout?: string;
     limit?: number;
 }
 
-const { category, layout, limit } = Astro.props;
+const { collection, layout, limit } = Astro.props;
 
-const allProjects = await getCollection("projects");
+const allProjects = await getCollection(collection);
 
-const filteredProjects = category
-    ? allProjects.filter((project) => project.data.category === category)
-    : allProjects;
-
-const sortedProjects = filteredProjects.sort(
+const sortedProjects = allProjects.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const displayedProjects = limit
     ? sortedProjects.slice(0, limit)
     : sortedProjects;
+
+// Map collection names to URL paths
+const collectionPaths: Record<typeof collection, string> = {
+    projectsAssessment: "assessment",
+    projectsData: "data",
+    projectsMathEd: "math-ed",
+    projectsWebDev: "web-dev",
+    projectsCreativeClub: "creative-club",
+};
+
+const basePath = collectionPaths[collection];
 ---
 
 <div class={layout}>
@@ -34,6 +46,7 @@ const displayedProjects = limit
                 pubDate={project.data.pubDate}
                 status={project.data.status}
                 id={project.id}
+                basePath={basePath}
                 tags={project.data.tags}
             />
         ))

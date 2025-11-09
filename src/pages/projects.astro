@@ -6,11 +6,24 @@ import GridProjects from "../components/projects/GridProjects.astro";
 <PageLayout pageID="projects">
     <section class="section flow">
         <h2>Web Development</h2>
-        <GridProjects category="web-dev" />
+        <GridProjects collection="projectsWebDev" limit={6} />
+        <p>
+            <a href="/projects/web-dev">View all web development projects →</a>
+        </p>
     </section>
     <section class="section flow">
         <h2>Assessment</h2>
-        <GridProjects category="assessment" />
+        <GridProjects collection="projectsAssessment" limit={6} />
+        <p>
+            <a href="/projects/assessment">View all assessment projects →</a>
+        </p>
+    </section>
+    <section class="section flow">
+        <h2>Math Education</h2>
+        <GridProjects collection="projectsMathEd" limit={6} />
+        <p>
+            <a href="/projects/math-ed">View all math education projects →</a>
+        </p>
     </section>
     <section class="section flow">
         <h2>Creative Club</h2>
@@ -18,13 +31,15 @@ import GridProjects from "../components/projects/GridProjects.astro";
             Each month my wife's family and I pick a theme and each make a
             creative project based on the theme. These are my submissions.
         </p>
-        <!-- <GridProjects category="creative-club" /> -->
-        <GridProjects category="creative-club" layout="grid" limit={12} />
+        <GridProjects
+            collection="projectsCreativeClub"
+            layout="grid"
+            limit={12}
+        />
         <p>
-            We have now been doing this for a while. The last year or so of
-            projects are shown above, but you can check out all of them on the <a
-                href="/projects/creative">creative club projects</a
-            > page
+            <a href="/projects/creative-club"
+                >View all creative club projects →</a
+            >
         </p>
     </section>
 </PageLayout>

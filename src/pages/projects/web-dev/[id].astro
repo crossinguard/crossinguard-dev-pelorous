@@ -1,0 +1,102 @@
+---
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projectsWebDev");
+    return projects.map((project) => ({
+        params: { id: project.id },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<ProjectLayout project={project} Content={Content}>
+    {/* Add web-dev specific content using named slots */}
+    <div slot="metadata" class="web-dev-links">
+        {
+            project.data.liveUrl && (
+                <a
+                    href={project.data.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button"
+                >
+                    View Live Site
+                </a>
+            )
+        }
+        {
+            project.data.repoUrl && (
+                <a
+                    href={project.data.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button"
+                >
+                    View Repository
+                </a>
+            )
+        }
+        {
+            project.data.technologies &&
+                project.data.technologies.length > 0 && (
+                    <div class="technologies">
+                        <strong>Technologies:</strong>
+                        <ul class="tech-list">
+                            {project.data.technologies.map((tech) => (
+                                <li class="tech-badge">{tech}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+        }
+    </div>
+</ProjectLayout>
+
+<style>
+    .web-dev-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+        margin-block: var(--space-m);
+    }
+
+    .button {
+        display: inline-block;
+        padding: var(--space-xs) var(--space-m);
+        background: var(--color-primary);
+        color: var(--color-light);
+        text-decoration: none;
+        border-radius: var(--space-xs);
+        text-align: center;
+    }
+
+    .button:hover {
+        background: var(--color-primary-shade);
+    }
+
+    .technologies {
+        margin-block-start: var(--space-m);
+    }
+
+    .tech-list {
+        display: flex;
+        gap: var(--space-xs);
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin-block-start: var(--space-xs);
+    }
+
+    .tech-badge {
+        background: var(--color-primary);
+        color: var(--color-light);
+        padding: var(--space-2xs) var(--space-xs);
+        border-radius: var(--space-2xs);
+        font-size: var(--step--1);
+    }
+</style>

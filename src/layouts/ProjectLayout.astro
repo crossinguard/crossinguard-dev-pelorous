@@ -1,19 +1,23 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "./BaseLayout.astro";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
-import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-export async function getStaticPaths() {
-    const projects = await getCollection("projects");
-    return projects.map((project) => ({
-        params: { id: project.id },
-        props: { project },
-    }));
+// Accept any project collection type
+type ProjectType =
+    | CollectionEntry<"projectsAssessment">
+    | CollectionEntry<"projectsCreativeClub">
+    | CollectionEntry<"projectsData">
+    | CollectionEntry<"projectsMathEd">
+    | CollectionEntry<"projectsWebDev">;
+
+interface Props {
+    project: ProjectType;
+    Content: any; // The rendered content component
 }
 
-const { project } = Astro.props;
-const { Content } = await render(project);
+const { project, Content } = Astro.props;
 
 // Date formatting helper
 const formatDate = (date: Date) =>
@@ -37,6 +41,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     <article class="flow">
         <h1 class="title">{project.data.title}</h1>
         <p class="description">{project.data.description}</p>
+
+        {/* Slot for collection-specific content to be inserted here */}
+        <slot name="metadata" />
+
         {
             project.data.tags && project.data.tags.length > 0 && (
                 <ul role="list" class="tags cluster">
@@ -72,6 +80,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         </div>
 
         <hr />
+
+        {/* Slot for collection-specific content before image */}
+        <slot name="before-image" />
+
         {
             project.data.image &&
                 (() => {
@@ -92,9 +104,16 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                     );
                 })()
         }
+
+        {/* Slot for collection-specific content after image */}
+        <slot name="after-image" />
+
         <div class="content flow">
             <Content />
         </div>
+
+        {/* Slot for collection-specific content at the end */}
+        <slot name="footer" />
     </article>
 </BaseLayout>
 
