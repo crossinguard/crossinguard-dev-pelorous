@@ -1,45 +1,22 @@
 ---
 import "../styles/global.css";
+import BaseHead from "../components/global/BaseHead.astro";
 import PrimaryHeader from "../components/global/PrimaryHeader.astro";
-import BreadcrumbNav from "../components/global/BreadcrumbNav.astro";
 import Footer from "../components/global/Footer.astro";
-import site from "../data/site.json";
 
 interface Props {
     title: string;
     description: string;
-    showBreadcrumbs?: boolean;
-    breadcrumbs?: Array<{ text: string; href: string }>;
-    breadcrumbIcon?: string;
-    breadcrumbText?: string;
 }
 
-const {
-    title,
-    description,
-    showBreadcrumbs = false,
-    breadcrumbs,
-    breadcrumbIcon,
-    breadcrumbText,
-} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-    <head>
-        <!-- ... existing head content ... -->
-    </head>
+    <BaseHead title={title} description={description} />
     <body>
         <PrimaryHeader />
         <main id="main-content" tabindex="-1" class="wrapper flow">
-            {
-                showBreadcrumbs && (
-                    <BreadcrumbNav
-                        crumbs={breadcrumbs}
-                        indexIcon={breadcrumbIcon}
-                        indexText={breadcrumbText}
-                    />
-                )
-            }
             <slot />
         </main>
         <Footer />

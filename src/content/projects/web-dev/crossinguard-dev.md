@@ -15,6 +15,9 @@ This website is my own personal creation. A more comprehensive writeup is coming
 ## Tools and resources:
 
 - web framework: [Astro](https://astro.build/)
+  - [astro breadcrumbs navigation](https://docs.astro-breadcrumbs.kasimir.dev/)
+  - [astro icons](https://www.astroicon.dev/)
+- online repository: [GitHub](https://github.com/)
 - online repository: [GitHub](https://github.com/)
 - web hosting platform: [Netlify](https://www.netlify.com/)
 - favicon generator: [Favicon.io](https://favicon.io/favicon-converter/)

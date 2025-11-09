@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import BreadcrumbNav from "../components/global/BreadcrumbNav.astro";
 import GridProjects from "../components/projects/GridProjects.astro";
 import {
     projectCollections,
@@ -14,23 +15,12 @@ interface Props {
 
 const { collectionKey, layout, dataLayout } = Astro.props;
 const config = projectCollections[collectionKey];
-
-const breadcrumbs = [
-    { text: "Projects", href: "/projects" },
-    { text: config.name, href: `/projects/${config.path}` },
-];
 ---
 
-<BaseLayout
-    title={`${config.name} Projects`}
-    description={config.description}
-    showBreadcrumbs={true}
-    breadcrumbs={breadcrumbs}
-    breadcrumbIcon="ph:gear"
-    breadcrumbText="Projects"
->
+<BaseLayout title={`${config.name} Projects`} description={config.description}>
     <section class="section flow">
-        <h2>{config.name}</h2>
+        <h1>{config.name}</h1>
+        <BreadcrumbNav />
         <p>{config.description}</p>
         <GridProjects
             collection={collectionKey}

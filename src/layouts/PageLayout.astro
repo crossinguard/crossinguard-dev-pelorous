@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import BreadcrumbNav from "../components/global/BreadcrumbNav.astro";
 import { Icon } from "astro-icon/components";
 import { getEntry, render } from "astro:content";
 
@@ -22,6 +23,7 @@ const { Content } = await render(page);
         {page.data.icon && <Icon name={page.data.icon} />}
         {page.data.title}
     </h1>
+    <BreadcrumbNav />
     <p>{page.data.description}</p>
     <hr />
 

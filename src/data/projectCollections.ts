@@ -3,30 +3,31 @@ export const projectCollections = {
     name: "Creative Club",
     path: "creative-club",
     description:
-      "Each month my wife's family and I pick a theme and each make a creative project based on the theme. These are my submissions.",
+      "Each month my wife's family and I take turns picking a theme and each make a creative project based on the theme. These are my submissions.",
   },
   projectsWebDev: {
     name: "Web Development",
     path: "web-dev",
     description:
-      "A collection of web development projects including personal sites, tools, and experiments.",
+      "Various web sitey projects I have made. I even got paid for some of them!",
   },
   projectsAssessment: {
     name: "Assessment",
     path: "assessment",
     description:
-      "Tools and resources for modern assessment development, item authoring, and educational measurement.",
+      'I currently work full time as an "assessment developer", meaning I design, build, and manage assessments. This can include open-ended tasks graded against a rubric as well as traditional multiple-choice questions. These are tools I am building to support my workflow.',
   },
   projectsMathEd: {
     name: "Math Education",
     path: "math-ed",
     description:
-      "Mathematics education projects, teaching resources, and educational tools.",
+      "While I am no longer in the classroom, I still dabble in math. These are projects specific to math ed that I hope other teachers might find use in.",
   },
   projectsData: {
     name: "Data",
     path: "data",
-    description: "Data analysis, visualization, and data science projects.",
+    description:
+      "It turns out I am far more interested in the tech side of data analytics than the business side. These are my data projects that do just that.",
   },
 } as const;
 

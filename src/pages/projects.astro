@@ -15,15 +15,15 @@ import {
                 <section class="section flow">
                     <h2>{config.name}</h2>
                     <p>{config.description}</p>
-                    <GridProjects
-                        collection={key}
-                        limit={limit}
-                        layout="stack"
-                    />
                     <p>
                         <a href={`/projects/${config.path}`}>
-                            View all {config.name.toLowerCase()}
+                            View all {config.name.toLowerCase()} projects
                         </a>
+                        <GridProjects
+                            collection={key}
+                            limit={limit}
+                            layout="stack"
+                        />
                     </p>
                 </section>
             );
