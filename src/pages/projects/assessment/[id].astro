@@ -1,5 +1,5 @@
 ---
-import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import ProjectEntryLayout from "../../../layouts/ProjectEntryLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,4 +14,8 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<ProjectLayout project={project} Content={Content} />
+<ProjectEntryLayout
+    project={project}
+    Content={Content}
+    collectionKey="projectsAssessment"
+/>

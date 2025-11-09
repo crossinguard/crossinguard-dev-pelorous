@@ -1,15 +1,5 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import GridProjects from "../../../components/projects/GridProjects.astro";
-
-const title = "Data Projects";
-const description = "Data analysis, visualization, and data science projects.";
+import ProjectCollectionLayout from "../../../layouts/ProjectCollectionLayout.astro";
 ---
 
-<BaseLayout title={title} description={description}>
-    <section class="section flow">
-        <h2>Data Projects</h2>
-        <p>{description}</p>
-        <GridProjects collection="projectsData" />
-    </section>
-</BaseLayout>
+<ProjectCollectionLayout collectionKey="projectsData" />

@@ -1,0 +1,89 @@
+---
+import { Breadcrumbs } from "astro-breadcrumbs";
+import { Icon } from "astro-icon/components";
+import "astro-breadcrumbs/breadcrumbs.css";
+
+interface Props {
+    crumbs?: Array<{ text: string; href: string }>;
+    indexText?: string; // custom text for the first crumb
+    indexIcon?: string; // custom icon for the first crumb
+}
+
+const { crumbs, indexText = "Home", indexIcon = "ph:house" } = Astro.props;
+---
+
+<nav class="breadcrumb-wrapper">
+    <Breadcrumbs
+        crumbs={crumbs}
+        indexText={indexText}
+        schemaJsonScript={true}
+        mainBemClass="site-breadcrumbs"
+    >
+        <span slot="index" class="index-content">
+            <Icon name={indexIcon} />
+            <span class="index-text">{indexText}</span>
+        </span>
+        <Icon name="ph:caret-right" slot="separator" />
+    </Breadcrumbs>
+</nav>
+
+<style>
+    .breadcrumb-wrapper {
+        margin-block-end: var(--space-m);
+    }
+
+    .index-content {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3xs);
+    }
+
+    /* Customize the breadcrumb styles */
+    :global(.site-breadcrumbs) {
+        font-size: var(--step--1);
+    }
+
+    :global(.site-breadcrumbs ol) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2xs);
+        padding: 0;
+        list-style: none;
+    }
+
+    :global(.site-breadcrumbs li) {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2xs);
+    }
+
+    :global(.site-breadcrumbs a) {
+        color: var(--color-primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: var(--space-3xs);
+    }
+
+    :global(.site-breadcrumbs a:hover) {
+        text-decoration: underline;
+        color: var(--color-primary-shade);
+    }
+
+    :global(.site-breadcrumbs li:last-child) {
+        font-weight: 600;
+        color: var(--color-dark);
+    }
+
+    /* Icon styling */
+    :global(.site-breadcrumbs [data-icon]) {
+        font-size: 1em;
+        vertical-align: middle;
+    }
+
+    /* Separator styling */
+    :global(.site-breadcrumbs .separator) {
+        opacity: 0.5;
+        color: var(--color-dark);
+    }
+</style>

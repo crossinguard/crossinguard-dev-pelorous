@@ -1,5 +1,5 @@
 ---
-import ProjectLayout from "../../../layouts/ProjectLayout.astro";
+import ProjectEntryLayout from "../../../layouts/ProjectEntryLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,8 +14,11 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<ProjectLayout project={project} Content={Content}>
-    {/* Add creative-club specific content using named slots */}
+<ProjectEntryLayout
+    project={project}
+    Content={Content}
+    collectionKey="projectsCreativeClub"
+>
     <div slot="metadata" class="creative-metadata">
         {
             project.data.theme && (
@@ -32,7 +35,7 @@ const { Content } = await render(project);
             )
         }
     </div>
-</ProjectLayout>
+</ProjectEntryLayout>
 
 <style>
     .creative-metadata {

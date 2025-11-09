@@ -1,16 +1,5 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import GridProjects from "../../../components/projects/GridProjects.astro";
-
-const title = "Assessment Projects";
-const description =
-    "Tools and resources for modern assessment development, item authoring, and educational measurement.";
+import ProjectCollectionLayout from "../../../layouts/ProjectCollectionLayout.astro";
 ---
 
-<BaseLayout title={title} description={description}>
-    <section class="section flow">
-        <h2>Assessment</h2>
-        <p>{description}</p>
-        <GridProjects collection="projectsAssessment" />
-    </section>
-</BaseLayout>
+<ProjectCollectionLayout collectionKey="projectsAssessment" />
