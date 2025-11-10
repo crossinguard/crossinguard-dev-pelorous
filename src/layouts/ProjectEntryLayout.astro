@@ -8,6 +8,7 @@ import {
     projectCollections,
     type ProjectCollectionKey,
 } from "../data/projectCollections";
+import { formatDate } from "../utils/formatDate";
 
 // Accept any project collection type
 type ProjectType =
@@ -25,14 +26,6 @@ interface Props {
 
 const { project, Content, collectionKey } = Astro.props;
 const config = projectCollections[collectionKey];
-
-// Date formatting helper
-const formatDate = (date: Date) =>
-    date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
 
 const pubDate = formatDate(project.data.pubDate);
 const updatedDate = project.data.updatedDate

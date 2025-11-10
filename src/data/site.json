@@ -2,21 +2,7 @@
   "website": {
     "title": "crossinguard.dev",
     "description": "The personal website for Brett Egbert and his nerdy little projects.",
-    "url": "https://crossinguard.dev/",
-    "navigation": [
-      {
-        "name": "Posts",
-        "url": "/posts"
-      },
-      {
-        "name": "Projects",
-        "url": "/projects"
-      },
-      {
-        "name": "About",
-        "url": "/about"
-      }
-    ]
+    "url": "https://crossinguard.dev/"
   },
   "author": {
     "name": "W. Brett Egbert",

@@ -1,16 +1,15 @@
 ---
 import CardProject from "./CardProject.astro";
+import {
+    projectCollections,
+    type ProjectCollectionKey,
+} from "../../data/projectCollections";
 import { getCollection } from "astro:content";
 
 interface Props {
-    collection:
-        | "projectsAssessment"
-        | "projectsData"
-        | "projectsMathEd"
-        | "projectsWebDev"
-        | "projectsCreativeClub";
-    layout?: string;
-    limit?: number;
+    collection: ProjectCollectionKey; // The project collection to display
+    layout?: string; // Optional CSS class for layout styling
+    limit?: number; // Optional limit on number of projects to display
 }
 
 const { collection, layout, limit } = Astro.props;
@@ -25,16 +24,7 @@ const displayedProjects = limit
     ? sortedProjects.slice(0, limit)
     : sortedProjects;
 
-// Map collection names to URL paths
-const collectionPaths: Record<typeof collection, string> = {
-    projectsAssessment: "assessment",
-    projectsData: "data",
-    projectsMathEd: "math-ed",
-    projectsWebDev: "web-dev",
-    projectsCreativeClub: "creative-club",
-};
-
-const basePath = collectionPaths[collection];
+const basePath = projectCollections[collection].path;
 ---
 
 <div class={layout}>
