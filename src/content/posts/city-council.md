@@ -14,7 +14,7 @@ The mayor, heads of various city departments, and elected council members meet u
 
 One day in early May I saw a posting from a current city council member letting us know that 3 positions were up for reelection and signs-up were happening now. I did some online sleuthing about what exactly a city councilor did, looked up the fees & timeline for running, and signed up for the 2025 election!
 
-# The Backstory
+## The Backstory
 
 In the summer of 2020 I moved to a small city in northern Washington state. When I say small, I mean tiny. My city's population is ~1/3 of the high school I taught at before moving here. My city contains 0 stop lights, 3.5 restaurants, and our library is unfortunately only open 3 days per week.
 
@@ -26,7 +26,7 @@ My involvement in Friends of the Sumas Library (FOSL) kickstarted a powerful int
 
 At this point in my life I have been involved with FOSL for several years and am now the acting secretary (Board of Directors baby!). I have also been attending city council meetings with regularity for the better part of a year. I am still early in my community era, but I'm not going anywhere.
 
-# The Election
+## The Election
 
 My campaign, and I am using this term as loosely as I can, consisted of:
 
@@ -38,7 +38,7 @@ My campaign, and I am using this term as loosely as I can, consisted of:
 
 I paid $18 to file for office and $10 on my website's domain, bringing my grand total for out of pocket expenses to $28 (plus a whole lotta time to figure everything out).
 
-## Primary Election
+### Primary Election
 
 This year there were 3 separate city council positions up for reelection. All three incumbents (I can say it, I'm a politician now) were running again. I picked one at random and signed up for Position 2.
 
@@ -46,7 +46,7 @@ Turns out a fifth person was interested in running, but instead of signing up fo
 
 In Washington, the primary election narrows down candidates to the top 2, who both move on to the later general election. Three candidates enter, two candidates leave. I can't speak much to the third candidate as I do not know him, but in the end the incumbent city councilor and I are the ones that moved on. I had dozens of followers. Dozens!
 
-## General Election
+### General Election
 
 It was a weird feeling looking at my own face and reading my own description in the official printed voter's guide that gets sent to everyone. This election overall is a smaller one, with the "power" positions more at the *mayors-of-medium-sized-cities* level. But it was still fun to see bigger ticket names and issues right next to mine. I got a few good keepsakes to throw in a bin and be looked at every few years/decades.
 
