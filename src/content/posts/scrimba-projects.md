@@ -47,7 +47,7 @@ The app displays the current change in people count. Hitting save updates the to
 
 <p
     class="codepen"
-    data-height="300"
+    data-height="450"
     data-default-tab="js,result"
     data-slug-hash="YPwMOgQ"
     data-pen-title="Counter App | Learn JavaScript"
@@ -69,13 +69,11 @@ The app displays the current change in people count. Hitting save updates the to
 
 #### Basketball Scoreboard
 
-*(work in progress)*
-
 This was the "solo project" at the end of a practice section. In a typical learning project, like the counter up above, you slowly make each piece of functionality under the guiding hand of the lesson instructor. You still put your own spin and go beyond the basic requirements as much as you want, but the guard rails are up. This project is different because it starts from scratch based on a design file and project specifications. For better or worse, the code you see is my own implementation.
 
 <p
     class="codepen"
-    data-height="300"
+    data-height="450"
     data-default-tab="js,result"
     data-slug-hash="EaPBLGz"
     data-pen-title="Basketball Scoreboard | Learn JavaScript"
@@ -86,6 +84,32 @@ This was the "solo project" at the end of a practice section. In a typical learn
     <span
         >See the Pen <a href="https://codepen.io/crossinguard/pen/EaPBLGz">
             Basketball Scoreboard | Learn JavaScript</a
+        > by crossinguard (<a href="https://codepen.io/crossinguard"
+            >@crossinguard</a
+        >) on <a href="https://codepen.io">CodePen</a>.</span
+    >
+</p>
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+#### Blackjack Game
+
+I really enjoyed this one. The previous projects all felt like individual concepts, while this blackjack game required a lot of connected pieces. The base project completed in the course was pretty minimal. I had only intended to tidy things up a bit, but across serveral days I rewrote almost all of it. The HTML, CSS, and JS are heavily modified from the co-created project in the course, but the skills I used and approaches I tried to expand on are still centered on those concepts.
+
+My version goes further into the "push your luck" element, with a running score using progressive rewards/punishments depending on how far under or over you were. Additionally, I made the buttons dynamically appear and disappear depending on context. This is just a simple demo to practice core JS skills, but I keep playing the game. I might revisit this down the road and see if I can turn it into a simple phone app. I have no idea how to do that, but have always wanted to learn how.
+
+<p
+    class="codepen"
+    data-height="450"
+    data-default-tab="js,result"
+    data-slug-hash="MYyaaOB"
+    data-pen-title="Blackjack Game | Learn JavaScript"
+    data-preview="true"
+    data-user="crossinguard"
+    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+>
+    <span
+        >See the Pen <a href="https://codepen.io/crossinguard/pen/MYyaaOB">
+            Blackjack Game | Learn JavaScript</a
         > by crossinguard (<a href="https://codepen.io/crossinguard"
             >@crossinguard</a
         >) on <a href="https://codepen.io">CodePen</a>.</span
